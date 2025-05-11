@@ -1,87 +1,89 @@
 
 const express = require('express');
-const cors = require('cors');
 const fetch = require('node-fetch');
-const { Readability } = require('@mozilla/readability');
 const { JSDOM } = require('jsdom');
+const { Readability } = require('@mozilla/readability');
+const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
 app.use(express.json());
+app.use(cors());
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-
-async function extractArticleText(url) {
-    try {
-        const response = await fetch(url);
-        const html = await response.text();
-        const dom = new JSDOM(html, { url });
-        const reader = new Readability(dom.window.document);
-        const article = reader.parse();
-        return article?.textContent || '';
-    } catch (error) {
-        console.error("❌ Failed to extract article:", error);
-        return '';
-    }
-}
+const PORT = process.env.PORT || 10000;
 
 app.post('/generate', async (req, res) => {
-    const { topic } = req.body;
+    const topic = req.body.topic;
+
+    if (!topic) {
+        return res.status(400).json({ error: 'Topic is required' });
+    }
 
     let promptText = topic;
 
-    // If it's a URL, extract readable article text
-    if (topic.startsWith('http')) {
-        console.log("🌐 Detected URL, extracting content...");
-        const articleText = await extractArticleText(topic);
-        if (articleText.length > 100) {
-            promptText = `Create a lesson plan based on this article content: \n${articleText}`;
-        } else {
-            return res.status(400).json({ error: "Unable to extract useful content from URL." });
+    // Check if it's a URL and try to extract article content
+    if (/^https?:\/\//.test(topic)) {
+        console.log('🌐 Detected URL, extracting content...');
+        try {
+            const response = await fetch(topic);
+            const html = await response.text();
+            const dom = new JSDOM(html, { url: topic });
+            const article = new Readability(dom.window.document).parse();
+
+            if (article && article.textContent) {
+                console.log('📄 Extracted article text:', article.textContent.slice(0, 500) + '...');
+                promptText = article.textContent;
+            } else {
+                console.warn('⚠️ Failed to extract main article content. Using original topic.');
+            }
+        } catch (err) {
+            console.error('❌ Error fetching or parsing article:', err);
         }
     }
 
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-            "Authorization": `Bearer ${OPENAI_API_KEY}`,
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            model: "gpt-3.5-turbo",
-            messages: [{ role: "user", content: `Create a 3-point lesson plan with titles, 3-4 bullet subpoints each, and at least 2 quotes per section on: "${promptText}"` }],
-            temperature: 0.7
-        })
-    });
-
-    const data = await response.json();
+    const messages = [
+        { role: "system", content: "You are an AI assistant that creates clear, concise lesson plans from topics or articles." },
+        { role: "user", content: `Create a 3-part lesson with key talking points, subpoints, and two quotes for each section on: ${promptText}` }
+    ];
 
     try {
-        const rawText = data.choices[0].message.content;
-
-        const sections = rawText.split(/\n(?=\d+\.)/).map(section => {
-            const titleMatch = section.match(/^\d+\.\s*(.*)/);
-            const title = titleMatch ? titleMatch[1].trim() : "Lesson Section";
-            const bullets = Array.from(section.matchAll(/[-•]\s+(.*)/g)).map(m => m[1].trim());
-            const quotes = Array.from(section.matchAll(/“([^”]+)”|"(.*?)"/g)).map(m => m[1] || m[2]);
-
-            return {
-                id: Math.random().toString(36).substring(2, 10),
-                title,
-                subpoints: bullets,
-                quotes
-            };
+        const aiResponse = await fetch("https://api.openai.com/v1/chat/completions", {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${OPENAI_API_KEY}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                model: "gpt-3.5-turbo",
+                messages,
+                temperature: 0.7
+            })
         });
 
-        res.json(sections);
+        const result = await aiResponse.json();
+        const output = result.choices?.[0]?.message?.content;
+
+        console.log("🤖 AI Output:", output?.slice(0, 500) + '...');
+        res.json(parseLessonOutput(output));
     } catch (err) {
-        console.error("❌ JSON parse error:", err);
-        res.status(500).json({ error: "Failed to parse OpenAI response." });
+        console.error("❌ Error calling OpenAI API:", err);
+        res.status(500).json({ error: "OpenAI API error" });
     }
 });
 
-const PORT = process.env.PORT || 10000;
+// Helper: split AI response into structured lesson
+function parseLessonOutput(text) {
+    const sections = text.split(/\n\n(?=\d+\.)/); // split by numbered parts
+    return sections.map(section => {
+        const [titleLine, ...rest] = section.split("\n");
+        const title = titleLine.replace(/^\d+\.\s*/, '').trim();
+        const subpoints = rest.filter(l => /^[-*]/.test(l)).map(l => l.replace(/^[-*]\s*/, ''));
+        const quotes = rest.filter(l => /[-"“”']/.test(l) && !/^[-*]/.test(l));
+        return { title, subpoints, quotes };
+    });
+}
+
 app.listen(PORT, () => {
-    console.log(`✅ Proxy server running on http://localhost:${PORT}`);
+    console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
