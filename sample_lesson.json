@@ -1,0 +1,28 @@
+[
+    {
+        "title": "The Power of Faith",
+        "summary": "Faith is the cornerstone of spiritual resilience. It empowers individuals to act with hope even in uncertainty.",
+        "subpoints": [
+            "Faith motivates action beyond fear.",
+            "It provides clarity during confusion.",
+            "Strengthens our connection to divine purpose."
+        ],
+        "quotes": [
+            "\"Faith is taking the first step even when you don't see the whole staircase.\" - Martin Luther King Jr.",
+            "\"Now faith is confidence in what we hope for and assurance about what we do not see.\" - Hebrews 11:1"
+        ]
+    },
+    {
+        "title": "Living a Life of Charity",
+        "summary": "Charity is the pure love of Christ. It is expressed through selfless acts and an enduring heart.",
+        "subpoints": [
+            "Charity suffers long and is kind.",
+            "It envieth not and is not puffed up.",
+            "True charity never faileth."
+        ],
+        "quotes": [
+            "\"Charity is the pure love of Christ, and it endureth forever.\" - Moroni 7:47",
+            "\"Without charity ye are nothing.\" - 1 Corinthians 13:2"
+        ]
+    }
+]
