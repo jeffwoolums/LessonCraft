@@ -1,31 +1,52 @@
-import Foundation
+import SwiftUI
 
-struct LessonPoint: Identifiable, Codable, Hashable {
-    var id: UUID = UUID()  // Defaulted to auto-generate a UUID if none provided
-    let title: String
-    let summary: String?
-    let subpoints: [String]
-    let quotes: [String]?
+struct LessonSlideViewWithSources: View {
+    @Binding var lessonPoint: LessonPoint
 
-    // Custom decoding to handle missing "id" gracefully
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decodeIfPresent(UUID.self, forKey: .id) ?? UUID()
-        self.title = try container.decode(String.self, forKey: .title)
-        self.summary = try container.decodeIfPresent(String.self, forKey: .summary)
-        self.subpoints = try container.decode([String].self, forKey: .subpoints)
-        self.quotes = try container.decodeIfPresent([String].self, forKey: .quotes)
-    }
-
-    init(title: String, summary: String? = nil, subpoints: [String], quotes: [String]? = nil) {
-        self.id = UUID()
-        self.title = title
-        self.summary = summary
-        self.subpoints = subpoints
-        self.quotes = quotes
-    }
-
-    enum CodingKeys: String, CodingKey {
-        case id, title, summary, subpoints, quotes
+    var body: some View {
+        VStack(alignment: .leading) {
+            TextField("Title", text: $lessonPoint.title)
+                .font(.headline)
+            if let summary = lessonPoint.summary {
+                TextField("Summary", text: Binding($lessonPoint.summary, default: ""))
+                    .font(.subheadline)
+            } else {
+                TextField("Summary", text: Binding($lessonPoint.summary, default: ""))
+                    .font(.subheadline)
+            }
+            List {
+                Section(header: Text("Subpoints")) {
+                    ForEach(lessonPoint.subpoints.indices, id: \.self) { index in
+                        TextField("Subpoint", text: Binding(
+                            get: { lessonPoint.subpoints[index] },
+                            set: { lessonPoint.subpoints[index] = $0 }
+                        ))
+                    }
+                    .onDelete { indices in
+                        lessonPoint.subpoints.remove(atOffsets: indices)
+                    }
+                    Button("Add Subpoint") {
+                        lessonPoint.subpoints.append("")
+                    }
+                }
+                Section(header: Text("Quotes")) {
+                    if let quotesBinding = Binding($lessonPoint.quotes, default: []) {
+                        ForEach(quotesBinding.wrappedValue.indices, id: \.self) { index in
+                            TextField("Quote", text: Binding(
+                                get: { quotesBinding.wrappedValue[index] },
+                                set: { quotesBinding.wrappedValue[index] = $0 }
+                            ))
+                        }
+                        .onDelete { indices in
+                            quotesBinding.wrappedValue.remove(atOffsets: indices)
+                        }
+                        Button("Add Quote") {
+                            quotesBinding.wrappedValue.append("")
+                        }
+                    }
+                }
+            }
+        }
+        .padding()
     }
 }
