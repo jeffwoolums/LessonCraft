@@ -1,28 +1,31 @@
-[
-    {
-        "title": "The Power of Faith",
-        "summary": "Faith is the cornerstone of spiritual resilience. It empowers individuals to act with hope even in uncertainty.",
-        "subpoints": [
-            "Faith motivates action beyond fear.",
-            "It provides clarity during confusion.",
-            "Strengthens our connection to divine purpose."
-        ],
-        "quotes": [
-            "\"Faith is taking the first step even when you don't see the whole staircase.\" - Martin Luther King Jr.",
-            "\"Now faith is confidence in what we hope for and assurance about what we do not see.\" - Hebrews 11:1"
-        ]
-    },
-    {
-        "title": "Living a Life of Charity",
-        "summary": "Charity is the pure love of Christ. It is expressed through selfless acts and an enduring heart.",
-        "subpoints": [
-            "Charity suffers long and is kind.",
-            "It envieth not and is not puffed up.",
-            "True charity never faileth."
-        ],
-        "quotes": [
-            "\"Charity is the pure love of Christ, and it endureth forever.\" - Moroni 7:47",
-            "\"Without charity ye are nothing.\" - 1 Corinthians 13:2"
-        ]
+import Foundation
+
+struct LessonPoint: Identifiable, Codable, Hashable {
+    var id: UUID = UUID()  // Defaulted to auto-generate a UUID if none provided
+    let title: String
+    let summary: String?
+    let subpoints: [String]
+    let quotes: [String]?
+
+    // Custom decoding to handle missing "id" gracefully
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decodeIfPresent(UUID.self, forKey: .id) ?? UUID()
+        self.title = try container.decode(String.self, forKey: .title)
+        self.summary = try container.decodeIfPresent(String.self, forKey: .summary)
+        self.subpoints = try container.decode([String].self, forKey: .subpoints)
+        self.quotes = try container.decodeIfPresent([String].self, forKey: .quotes)
     }
-]
+
+    init(title: String, summary: String? = nil, subpoints: [String], quotes: [String]? = nil) {
+        self.id = UUID()
+        self.title = title
+        self.summary = summary
+        self.subpoints = subpoints
+        self.quotes = quotes
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case id, title, summary, subpoints, quotes
+    }
+}
