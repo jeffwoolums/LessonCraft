@@ -73,6 +73,8 @@ app.post("/generate", async (req, res) => {
     } else {
       console.error("❌ No valid JSON array found in response.");
     }
+    // Fix OpenAI's accidental double quotes at the start of scripture fields
+    responseText = responseText.replace(/"scripture":"\"/g, '"scripture":"');
     try {
       const slides = JSON.parse(responseText);
       res.status(200).json(slides);
