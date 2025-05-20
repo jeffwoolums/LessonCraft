@@ -81,7 +81,8 @@ Slides must include vivid stories, doctrinal insights, and real-life application
     try {
       const slides = JSON.parse(responseText);
       res.setHeader('Content-Type', 'application/json; charset=utf-8');
-        res.status(200).send(JSON.stringify(slides));
+      res.status(200).send(JSON.stringify(slides));
+      
     } catch (parseErr) {
         console.error("❌ Failed to parse OpenAI response as JSON:", responseText);
         console.error("❌ Parse error:", parseErr.message);
