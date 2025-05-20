@@ -63,19 +63,17 @@ Respond ONLY with valid JSON. No markdown or commentary.
       console.error("❌ Missing message content in OpenAI response.");
     }
 
-    // Remove all occurrences of ```json and ``` anywhere in the response
     let responseText = completion.choices[0].message.content.trim();
-    console.log("🧾 Raw OpenAI Response:\n", responseText);
-    responseText = responseText
-      .replace(/```json/g, "")
-      .replace(/```/g, "")
-      .trim();
 
-    const jsonMatch = responseText.match(/\[[\s\S]*\]/);
-    if (jsonMatch) {
-      responseText = jsonMatch[0].trim();
+    // Explicitly remove markdown syntax and extract JSON array
+    responseText = responseText.replace(/^```json|```$/g, '').trim();
+    const jsonStart = responseText.indexOf('[');
+    const jsonEnd = responseText.lastIndexOf(']');
+
+    if (jsonStart !== -1 && jsonEnd !== -1) {
+      responseText = responseText.substring(jsonStart, jsonEnd + 1);
     } else {
-      console.error("❌ No valid JSON array found in response.");
+      console.error("❌ No valid JSON array brackets found in response.");
     }
     // Fix OpenAI's accidental double quotes at the start of scripture fields
     responseText = responseText.replace(/"scripture":"\"/g, '"scripture":"');
