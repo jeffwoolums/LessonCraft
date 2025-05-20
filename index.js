@@ -23,23 +23,25 @@ app.post("/generate", async (req, res) => {
   const { topic, scriptureSources = [], storySources = [] } = req.body;
 
   const prompt = `
-    Create a JSON array where each object represents one slide for a 55-minute LDS lesson titled "${topic}". 
-    Each slide object must exactly match this structure:
-    - "title": String
-    - "subpoints": Array of objects exactly matching this format:
-        - "text": String (main discussion point, 1 sentence)
-        - "explanation": Optional String (doctrinal explanation or definition)
-        - "scripture": Optional String (relevant scripture quote, include full text)
-        - "link": Optional String (URL to scripture on churchofjesuschrist.org)
-    - "summary": Optional short summary (1-2 sentences, String or null)
-    - "quotes": Optional relevant quotes (Array of strings or empty array)
-    - "story": Optional in-depth paragraph or null
+First, provide an engaging, relatable introductory story sourced from official LDS publications (General Conference talks, Ensign articles, scriptures) to set up the lesson titled "${topic}". This introduction should clearly connect emotionally and doctrinally to the main lesson topic.
 
-   Respond ONLY with the JSON array, absolutely no markdown, no surrounding commentary, no backticks, and no additional text.
-Scripture sources: ${scriptureSources.join(", ")}.
-Story sources: ${storySources.join(", ")}.
+Next, create a JSON array representing each slide for the 55-minute lesson. Each slide should build logically from the introduction, and must follow this exact structure:
 
-Slides must include vivid stories, doctrinal insights, and real-life applications.
+- "title": String
+- "subpoints": Array of objects containing:
+    - "text": String (clear and concise main point)
+    - "explanation": Optional deeper doctrinal context or definition
+    - "scripture": Optional full scripture text if relevant
+    - "link": Optional URL linking directly to scripture on churchofjesuschrist.org
+- "summary": Optional brief recap (1-2 sentences)
+- "quotes": Optional array of relevant quotes from LDS sources
+- "story": Optional story or narrative example that expands on the slide’s key points
+
+Sources: ${scriptureSources.join(", ")}, ${storySources.join(", ")}.
+
+Respond ONLY with valid JSON, with no markdown or commentary.
+
+Slides must include vivid stories, doctrinal insights, real-life applications, and clear connections back to the introductory story.
   `;
 
   try {
@@ -82,7 +84,7 @@ Slides must include vivid stories, doctrinal insights, and real-life application
       const slides = JSON.parse(responseText);
       res.setHeader('Content-Type', 'application/json; charset=utf-8');
       res.status(200).send(JSON.stringify(slides));
-      
+
     } catch (parseErr) {
         console.error("❌ Failed to parse OpenAI response as JSON:", responseText);
         console.error("❌ Parse error:", parseErr.message);
