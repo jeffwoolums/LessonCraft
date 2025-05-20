@@ -21,17 +21,18 @@ app.post("/generate", async (req, res) => {
 
   const prompt = `
     Create a JSON array where each object represents one slide for a 55-minute LDS lesson titled "${topic}". 
-    Each slide object must contain:
+    Each slide object must exactly match this structure:
     - "title": String
-    - "subpoints": Array of objects. Each object must include:
-        - "text": The main point (1 sentence)
-        - "explanation": A doctrinal definition or explanation from an LDS perspective
-        - "scripture": A relevant scripture quote (include full text)
-        - "link": A URL to the scripture on churchofjesuschrist.org
-    - "summary": Optional short summary (1-2 sentences)
-    - "quotes": Optional relevant quotes (Array of strings)
-    - "story": Optional in-depth paragraph that includes a vivid narrative, scripture example, general conference quote, or real-life LDS story related to the topic.
+    - "subpoints": Array of objects exactly matching this format:
+        - "text": String (main discussion point, 1 sentence)
+        - "explanation": Optional String (doctrinal explanation or definition)
+        - "scripture": Optional String (relevant scripture quote, include full text)
+        - "link": Optional String (URL to scripture on churchofjesuschrist.org)
+    - "summary": Optional short summary (1-2 sentences, String or null)
+    - "quotes": Optional relevant quotes (Array of strings or empty array)
+    - "story": Optional in-depth paragraph or null
 
+    Respond ONLY with valid JSON array matching exactly the described structure, without markdown, commentary, or any other text.
     Scripture sources: ${scriptureSources.join(", ")}.
     Story sources: ${storySources.join(", ")}.
 
@@ -79,10 +80,11 @@ app.post("/generate", async (req, res) => {
       const slides = JSON.parse(responseText);
       res.status(200).json(slides);
     } catch (parseErr) {
-      console.error("❌ Failed to parse OpenAI response as JSON:", responseText);
-      console.error("❌ Parse error:", parseErr.message);
-      res.status(500).send("OpenAI response was not valid JSON.");
-    }
+        console.error("❌ Failed to parse OpenAI response as JSON:", responseText);
+        console.error("❌ Parse error:", parseErr.message);
+        // For debugging: send back raw response and error
+        res.status(200).json({ raw: responseText, error: parseErr.message });
+      }
   } catch (err) {
     console.error("❌ Error occurred while calling OpenAI:", err);
     res.status(500).send("OpenAI request failed or timed out.");
