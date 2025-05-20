@@ -22,27 +22,26 @@ const openai = new OpenAI({
 app.post("/generate", async (req, res) => {
   const { topic, scriptureSources = [], storySources = [] } = req.body;
 
-const prompt = `
-First, provide a detailed, engaging introductory story of at least 300 words sourced from official LDS publications (General Conference talks, Ensign articles, Church history, scriptures). The story should prominently feature relatable historical figures (e.g., Joseph Smith, Brigham Young, pioneers) or contemporary individuals from church articles. Clearly describe their personal challenges, struggles, or pivotal life events. Include specific doctrinal principles and scriptures that directly connect emotionally and doctrinally to the lesson topic: "${topic}". End the introduction by explicitly stating how this story sets up the key themes of the lesson.
-
-Next, create a JSON array representing each slide for a 55-minute lesson. Each slide must build logically from the introductory story and follow this structure exactly:
-
-- "title": String
-- "subpoints": Array of objects containing:
-    - "text": String (main point clearly stated in one sentence)
-    - "explanation": Optional deeper doctrinal explanation or definition
-    - "scripture": Optional scripture (include the full scripture text)
-    - "link": Optional URL linking to the scripture at churchofjesuschrist.org
-- "summary": Optional brief recap (1-2 sentences)
-- "quotes": Optional array of relevant LDS quotes
-- "story": Optional in-depth narrative or illustrative example connected to the slide’s key points
-- "questions": Optional array of strings, containing 2-3 engaging group discussion questions related directly to the slide's key points
-
-Sources: ${scriptureSources.join(", ")}, ${storySources.join(", ")}.
-
-Respond ONLY with valid JSON. No markdown or commentary.
-`;
-
+  const prompt = `
+  First, provide a detailed, engaging introductory story of at least 500 words sourced from official LDS publications (General Conference talks, Ensign articles, Church history, scriptures). The story should prominently feature relatable historical figures, contemporary individuals, or relevant personal experiences found in Church publications. Clearly describe their personal challenges, struggles, or pivotal life events that directly connect emotionally and doctrinally to the lesson topic: "${topic}". Avoid always using Joseph Smith unless specifically relevant to the topic. End the introduction by explicitly stating how this story sets up the key themes of the lesson.
+  
+  Next, create a JSON array representing each slide for a 55-minute lesson. Each slide must build logically from the introductory story and follow this structure exactly:
+  
+  - "title": String
+  - "subpoints": Array of objects containing:
+      - "text": String (main point clearly stated in one sentence)
+      - "explanation": Optional deeper doctrinal explanation or definition
+      - "scripture": Optional scripture (include the full scripture text)
+      - "link": Optional URL linking to the scripture at churchofjesuschrist.org
+  - "summary": Optional brief recap (1-2 sentences)
+  - "quotes": Optional array of relevant LDS quotes
+  - "story": Optional in-depth narrative or illustrative example connected to the slide’s key points
+  - "questions": Optional array of strings, containing 2-3 engaging group discussion questions related directly to the slide's key points
+  
+  Sources: ${scriptureSources.join(", ")}, ${storySources.join(", ")}.
+  
+  Respond ONLY with valid JSON. No markdown or commentary.
+  `;
   try {
     console.log("⚙️ Sending request to OpenAI...");
     const completion = await openai.chat.completions.create({
