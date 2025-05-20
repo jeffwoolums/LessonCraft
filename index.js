@@ -42,7 +42,7 @@ Sources: ${scriptureSources.join(", ")}, ${storySources.join(", ")}.
 Respond ONLY with valid JSON. No markdown or commentary.
 `;
 
-Slides must include vivid stories, doctrinal insights, real-life applications, and clear connections back to the introductory story.
+
   `;
 
   try {
