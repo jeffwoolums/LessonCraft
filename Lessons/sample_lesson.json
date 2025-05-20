@@ -38,4 +38,19 @@
         "\"Faith is nourished by the fellowship of believers and the study of God's word.\" - Unknown"
       ]
     }
-  ]
+  ,
+  {
+    "title": "Lessons from the Life of Job",
+    "summary": "An exploration of Job's unwavering faith, perseverance through trials, and ultimate restoration by God.",
+    "subpoints": [
+      "Job remained faithful despite intense personal loss and suffering.",
+      "His friends misunderstood the reasons behind his trials.",
+      "God ultimately responded and restored Job's fortunes."
+    ],
+    "quotes": [
+      "\"Though he slay me, yet will I trust in him.\" - Job 13:15",
+      "\"The Lord gave, and the Lord hath taken away; blessed be the name of the Lord.\" - Job 1:21",
+      "\"So the Lord blessed the latter end of Job more than his beginning.\" - Job 42:12"
+    ]
+  }
+]
