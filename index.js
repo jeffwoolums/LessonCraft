@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 10000;
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get("/health", (req, res) => {
+  res.send("🩺 Server is alive.");
+});
+
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 });
@@ -36,6 +40,7 @@ app.post("/generate", async (req, res) => {
   `;
 
   try {
+    console.log("⚙️ Sending request to OpenAI...");
     const completion = await openai.chat.completions.create({
       model: "gpt-4o",
       response_format: "json",
@@ -48,6 +53,12 @@ app.post("/generate", async (req, res) => {
       ],
       temperature: 0.7,
     });
+    console.log("📬 Received response from OpenAI. Raw object:");
+    console.log(JSON.stringify(completion, null, 2));
+
+    if (!completion.choices[0]?.message?.content) {
+      console.error("❌ Missing message content in OpenAI response.");
+    }
 
     // Remove all occurrences of ```json and ``` anywhere in the response
     let responseText = completion.choices[0].message.content.trim();
@@ -73,7 +84,7 @@ app.post("/generate", async (req, res) => {
     }
   } catch (err) {
     console.error("❌ Error:", err.message || err);
-    res.status(500).send("Something went wrong generating lesson");
+    res.status(500).send("OpenAI request failed or timed out.");
   }
 });
 
