@@ -67,7 +67,7 @@ app.post("/generate", async (req, res) => {
       .replace(/```/g, "")
       .trim();
 
-    const jsonMatch = responseText.match(/\[\s*{[\s\S]*?}\s*]/);
+    const jsonMatch = responseText.match(/\[[\s\S]*\]/);
     if (jsonMatch) {
       responseText = jsonMatch[0].trim();
     } else {
