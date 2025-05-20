@@ -23,23 +23,26 @@ app.post("/generate", async (req, res) => {
   const { topic, scriptureSources = [], storySources = [] } = req.body;
 
   const prompt = `
-First, provide a detailed, engaging introductory story sourced from official LDS publications (General Conference talks, Ensign articles, Church history, or scriptures). The story should include clear context, relatable characters or historical figures (such as Joseph Smith), specific trials or challenges they faced, and how their experiences directly relate emotionally and doctrinally to the lesson titled "${topic}". This introduction should clearly connect emotionally and doctrinally to the main lesson topic.
-
-Next, create a JSON array representing each slide for the 55-minute lesson. Each slide should build logically from the introduction, and must follow this exact structure:
-
-- "title": String
-- "subpoints": Array of objects containing:
-    - "text": String (clear and concise main point)
-    - "explanation": Optional deeper doctrinal context or definition
-    - "scripture": Optional full scripture text if relevant
-    - "link": Optional URL linking directly to scripture on churchofjesuschrist.org
-- "summary": Optional brief recap (1-2 sentences)
-- "quotes": Optional array of relevant quotes from LDS sources
-- "story": Optional story or narrative example that expands on the slide’s key points
-
-Sources: ${scriptureSources.join(", ")}, ${storySources.join(", ")}.
-
-Respond ONLY with valid JSON, with no markdown or commentary.
+  First, provide a detailed, engaging introductory story of at least 300 words sourced from official LDS publications (General Conference talks, Ensign articles, Church history, scriptures). The story should prominently feature relatable historical figures (e.g., Joseph Smith, Brigham Young, pioneers) or contemporary individuals from church articles. Clearly describe their personal challenges, struggles, or pivotal life events. Include specific doctrinal principles and scriptures that directly connect emotionally and doctrinally to the lesson topic: "${topic}". End the introduction by explicitly stating how this story sets up the key themes of the lesson.
+  
+  Next, create a JSON array representing each slide for a 55-minute lesson. Each slide must build logically from the introductory story and follow this structure exactly:
+  
+  - "title": String
+  - "subpoints": Array of objects containing:
+      - "text": String (main point clearly stated in one sentence)
+      - "explanation": Optional deeper doctrinal explanation or definition
+      - "scripture": Optional scripture (include the full scripture text)
+      - "link": Optional URL linking to the scripture at churchofjesuschrist.org
+  - "summary": Optional brief recap (1-2 sentences)
+  - "quotes": Optional array of relevant LDS quotes
+  - "story": Optional in-depth narrative or illustrative example connected to the slide’s key points
+  
+  Slides must explicitly reference and build upon the introductory story, clearly linking doctrinal insights, vivid narratives, and practical applications back to the opening narrative.
+  
+  Sources: ${scriptureSources.join(", ")}, ${storySources.join(", ")}.
+  
+  Respond ONLY with valid JSON. No markdown or commentary.
+  `;
 
 Slides must include vivid stories, doctrinal insights, real-life applications, and clear connections back to the introductory story.
   `;
