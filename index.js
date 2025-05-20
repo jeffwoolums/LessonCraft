@@ -23,7 +23,7 @@ app.post("/generate", async (req, res) => {
   const { topic, scriptureSources = [], storySources = [] } = req.body;
 
   const prompt = `
-First, provide an engaging, relatable introductory story sourced from official LDS publications (General Conference talks, Ensign articles, scriptures) to set up the lesson titled "${topic}". This introduction should clearly connect emotionally and doctrinally to the main lesson topic.
+First, provide a detailed, engaging introductory story sourced from official LDS publications (General Conference talks, Ensign articles, Church history, or scriptures). The story should include clear context, relatable characters or historical figures (such as Joseph Smith), specific trials or challenges they faced, and how their experiences directly relate emotionally and doctrinally to the lesson titled "${topic}". This introduction should clearly connect emotionally and doctrinally to the main lesson topic.
 
 Next, create a JSON array representing each slide for the 55-minute lesson. Each slide should build logically from the introduction, and must follow this exact structure:
 
