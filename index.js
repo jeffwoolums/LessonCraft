@@ -19,25 +19,50 @@ app.post("/generate", async (req, res) => {
     Create a JSON array where each object represents one slide for a 55-minute LDS lesson titled "${topic}". 
     Each slide object must contain:
     - "title": String
-    - "subpoints": Array of key discussion points
+    - "subpoints": Array of objects. Each object must include:
+        - "text": The main point (1 sentence)
+        - "explanation": A doctrinal definition or explanation from an LDS perspective
+        - "scripture": A relevant scripture quote (include full text)
+        - "link": A URL to the scripture on churchofjesuschrist.org
     - "summary": Optional short summary (1-2 sentences)
     - "quotes": Optional relevant quotes (Array of strings)
+    - "story": Optional in-depth paragraph that includes a vivid narrative, scripture example, general conference quote, or real-life LDS story related to the topic.
 
     Scripture sources: ${scriptureSources.join(", ")}.
     Story sources: ${storySources.join(", ")}.
 
-    Ensure slides include vivid stories, personal examples, and real-life applications from these sources.
+    Ensure slides include vivid stories, doctrinal insights, and real-life applications. 
     Respond ONLY with valid JSON, without markdown or other text.
   `;
 
   try {
     const completion = await openai.chat.completions.create({
       model: "gpt-4o",
-      messages: [{ role: "user", content: prompt }],
+      response_format: "json",
+      messages: [
+        {
+          role: "system",
+          content: "You are a JSON generator. Respond ONLY with valid JSON. Do not include explanations, markdown formatting, or any surrounding text."
+        },
+        { role: "user", content: prompt }
+      ],
       temperature: 0.7,
     });
 
-    const responseText = completion.choices[0].message.content.trim();
+    // Remove all occurrences of ```json and ``` anywhere in the response
+    let responseText = completion.choices[0].message.content.trim();
+    console.log("🧾 Raw OpenAI Response:\n", responseText);
+    responseText = responseText
+      .replace(/```json/g, "")
+      .replace(/```/g, "")
+      .trim();
+
+    const jsonMatch = responseText.match(/\[\s*{[\s\S]*?}\s*]/);
+    if (jsonMatch) {
+      responseText = jsonMatch[0].trim();
+    } else {
+      console.error("❌ No valid JSON array found in response.");
+    }
     try {
       const slides = JSON.parse(responseText);
       res.status(200).json(slides);
