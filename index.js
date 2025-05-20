@@ -37,8 +37,6 @@ Next, create a JSON array representing each slide for a 55-minute lesson. Each s
 - "quotes": Optional array of relevant LDS quotes
 - "story": Optional in-depth narrative or illustrative example connected to the slide’s key points
 
-Slides must include vivid stories, doctrinal insights, real-life applications, and clear connections back to the introductory story.
-
 Sources: ${scriptureSources.join(", ")}, ${storySources.join(", ")}.
 
 Respond ONLY with valid JSON. No markdown or commentary.
