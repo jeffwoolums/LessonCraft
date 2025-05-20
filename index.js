@@ -32,12 +32,11 @@ app.post("/generate", async (req, res) => {
     - "quotes": Optional relevant quotes (Array of strings or empty array)
     - "story": Optional in-depth paragraph or null
 
-    Respond ONLY with valid JSON array matching exactly the described structure, without markdown, commentary, or any other text.
-    Scripture sources: ${scriptureSources.join(", ")}.
-    Story sources: ${storySources.join(", ")}.
+   Respond ONLY with the JSON array, absolutely no markdown, no surrounding commentary, no backticks, and no additional text.
+Scripture sources: ${scriptureSources.join(", ")}.
+Story sources: ${storySources.join(", ")}.
 
-    Ensure slides include vivid stories, doctrinal insights, and real-life applications. 
-    Respond ONLY with valid JSON, without markdown or other text.
+Slides must include vivid stories, doctrinal insights, and real-life applications.
   `;
 
   try {
