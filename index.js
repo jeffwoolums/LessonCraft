@@ -43,7 +43,6 @@ app.post("/generate", async (req, res) => {
     console.log("⚙️ Sending request to OpenAI...");
     const completion = await openai.chat.completions.create({
       model: "gpt-4o",
-      response_format: "json",
       messages: [
         {
           role: "system",
@@ -83,7 +82,7 @@ app.post("/generate", async (req, res) => {
       res.status(500).send("OpenAI response was not valid JSON.");
     }
   } catch (err) {
-    console.error("❌ Error:", err.message || err);
+    console.error("❌ Error occurred while calling OpenAI:", err);
     res.status(500).send("OpenAI request failed or timed out.");
   }
 });
