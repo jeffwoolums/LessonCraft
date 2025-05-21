@@ -1,56 +1,106 @@
 [
-    {
-      "title": "Understanding Faith in Christ",
-      "summary": "This lesson explores the foundational principles of faith in Jesus Christ, emphasizing its role in spiritual growth and daily living.",
-      "subpoints": [
-        "Faith involves trust in Jesus Christ's power and teachings.",
-        "It acts as the foundation of Christian belief.",
-        "Faith influences our thoughts, actions, and decision-making."
-      ],
-      "quotes": [
-        "\"For we walk by faith, not by sight.\" - 2 Corinthians 5:7",
-        "\"Faith is taking the first step even when you don't see the whole staircase.\" - Martin Luther King Jr."
-      ]
-    },
-    {
-      "title": "Living Faith Daily",
-      "summary": "Applying faith in everyday circumstances fosters resilience and spiritual maturity.",
-      "subpoints": [
-        "Read scriptures daily to strengthen belief.",
-        "Pray regularly to maintain connection with God.",
-        "Reflect on personal experiences where faith helped overcome challenges."
-      ],
-      "quotes": [
-        "\"Now faith is the substance of things hoped for, the evidence of things not seen.\" - Hebrews 11:1",
-        "\"Doubt is not the opposite of faith; it is one element of faith.\" - Paul Tillich"
-      ]
-    },
-    {
-      "title": "Growing in Faith",
-      "summary": "Nurturing faith requires both community support and personal study, which together deepen understanding and commitment.",
-      "subpoints": [
-        "Engage regularly with a faith community for encouragement and accountability.",
-        "Dedicate time to personal scripture study and reflection.",
-        "Participate in group discussions to gain diverse perspectives."
-      ],
-      "quotes": [
-        "\"As iron sharpens iron, so one person sharpens another.\" - Proverbs 27:17",
-        "\"Faith is nourished by the fellowship of believers and the study of God's word.\" - Unknown"
-      ]
-    }
-  ,
   {
-    "title": "Lessons from the Life of Job",
-    "summary": "An exploration of Job's unwavering faith, perseverance through trials, and ultimate restoration by God.",
+    "title": "Introduction to Following the Prophet",
     "subpoints": [
-      "Job remained faithful despite intense personal loss and suffering.",
-      "His friends misunderstood the reasons behind his trials.",
-      "God ultimately responded and restored Job's fortunes."
+      {
+        "text": "The importance of prophetic counsel",
+        "explanation": "Understanding why prophets are essential in guiding our lives.",
+        "scriptures": [
+          "Amos 3:7 - Surely the Lord God will do nothing, but he revealeth his secret unto his servants the prophets."
+        ],
+        "links": [
+          "https://www.churchofjesuschrist.org/study/scriptures/ot/amos/3.7"
+        ]
+      },
+      {
+        "text": "Blessings from obedience",
+        "explanation": "Obeying prophetic guidance brings personal peace and clarity.",
+        "scriptures": [
+          "D&C 21:4-6 - Wherefore... thou shalt give heed unto all his words."
+        ],
+        "links": [
+          "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/21.4-6"
+        ]
+      }
     ],
+    "summary": "Following prophetic counsel ensures alignment with God's will and brings profound personal blessings.",
     "quotes": [
-      "\"Though he slay me, yet will I trust in him.\" - Job 13:15",
-      "\"The Lord gave, and the Lord hath taken away; blessed be the name of the Lord.\" - Job 1:21",
-      "\"So the Lord blessed the latter end of Job more than his beginning.\" - Job 42:12"
+      "President Russell M. Nelson said, 'Hear Him by following prophetic guidance.'"
+    ],
+    "story": "In 1965, President Thomas S. Monson was strongly impressed to visit a sick member named Richard in Canada. Acting on prophetic guidance, he visited and brought comfort and peace to the family. This experience emphasizes the blessings of following prophetic promptings even when circumstances seem challenging.",
+    "questions": [
+      "How can following prophetic counsel bring peace into your life?",
+      "What experiences have you had following the prophet’s guidance?"
+    ]
+  },
+  {
+    "title": "Challenges and Faith in Following the Prophet",
+    "subpoints": [
+      {
+        "text": "Navigating skepticism",
+        "explanation": "Overcoming doubt and skepticism through faith in prophetic guidance.",
+        "scriptures": [
+          "2 Chronicles 20:20 - Believe in the Lord your God, so shall ye be established; believe his prophets, so shall ye prosper."
+        ],
+        "links": [
+          "https://www.churchofjesuschrist.org/study/scriptures/ot/2-chr/20.20"
+        ]
+      },
+      {
+        "text": "Historical examples of faith",
+        "explanation": "Early Saints who showed remarkable faith by following prophets through adversity.",
+        "scriptures": [
+          "D&C 1:38 - What I the Lord have spoken... whether by mine own voice or by the voice of my servants, it is the same."
+        ],
+        "links": [
+          "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/1.38"
+        ]
+      }
+    ],
+    "summary": "Faith helps us overcome modern skepticism and recognize the importance of prophetic counsel.",
+    "quotes": [
+      "Elder Jeffrey R. Holland said, 'Trust God and believe in good things to come.'"
+    ],
+    "story": "Early Church members faced severe persecution and trials as they followed the counsel to gather together. Despite skepticism and opposition, their faith in prophetic guidance sustained them and strengthened their resolve.",
+    "questions": [
+      "What can historical examples teach us about following prophets today?",
+      "How do you stay faithful amidst skepticism or challenges?",
+      "What role does personal revelation play in supporting prophetic guidance?"
+    ]
+  },
+  {
+    "title": "Applying Prophetic Teachings Daily",
+    "subpoints": [
+      {
+        "text": "Living by prophetic counsel",
+        "explanation": "Making daily decisions based on teachings from prophets.",
+        "scriptures": [
+          "Mosiah 2:41 - Consider on the blessed and happy state of those that keep the commandments of God."
+        ],
+        "links": [
+          "https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2.41"
+        ]
+      },
+      {
+        "text": "Seeking confirmation through prayer",
+        "explanation": "Prayer helps us understand and internalize prophetic teachings.",
+        "scriptures": [
+          "James 1:5 - If any of you lack wisdom, let him ask of God."
+        ],
+        "links": [
+          "https://www.churchofjesuschrist.org/study/scriptures/nt/james/1.5"
+        ]
+      }
+    ],
+    "summary": "Applying prophetic counsel enriches our daily decisions, bringing lasting happiness and clarity.",
+    "quotes": [
+      "President Gordon B. Hinckley said, 'We have a prophet upon the earth today.'"
+    ],
+    "story": "A young family decided to follow the prophet’s counsel by regularly holding family scripture study and prayer. Over time, they experienced increased unity, peace, and spiritual insights in their home, illustrating the practical benefits of applying prophetic teachings daily.",
+    "questions": [
+      "What steps can you take today to implement prophetic counsel?",
+      "How does prayer help you apply prophetic teachings?",
+      "Why is daily consistency important in following prophetic guidance?"
     ]
   }
 ]
