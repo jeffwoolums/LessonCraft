@@ -1,106 +1,66 @@
 [
   {
-    "title": "Introduction to Following the Prophet",
+    "id": "UUID-1",
+    "title": "Introduction: The Inspiring Faith of Mary Fielding Smith",
+    "summary": "An inspiring narrative demonstrating unwavering faith in challenging times.",
+    "introStory": "In the pioneer era, Mary Fielding Smith, widow of Hyrum Smith, faced intense adversity during her trek to the Salt Lake Valley. With faith as her compass, she defied impossible odds when her oxen became gravely ill. Rather than accepting defeat, she relied upon fervent prayer and profound trust in divine intervention. Miraculously, her faith was rewarded—her oxen healed, allowing her and her family to complete their journey safely. Her experience illustrates the profound reality that faith in God can overcome the harshest of trials.",
     "subpoints": [
       {
-        "text": "The importance of prophetic counsel",
-        "explanation": "Understanding why prophets are essential in guiding our lives.",
+        "id": "UUID-1-1",
+        "text": "Mary Fielding Smith’s Faith",
+        "explanation": "Her unyielding faith became an inspiration to fellow pioneers and subsequent generations, teaching that belief and action intertwined can yield miraculous results.",
         "scriptures": [
-          "Amos 3:7 - Surely the Lord God will do nothing, but he revealeth his secret unto his servants the prophets."
-        ],
-        "links": [
-          "https://www.churchofjesuschrist.org/study/scriptures/ot/amos/3.7"
-        ]
-      },
-      {
-        "text": "Blessings from obedience",
-        "explanation": "Obeying prophetic guidance brings personal peace and clarity.",
-        "scriptures": [
-          "D&C 21:4-6 - Wherefore... thou shalt give heed unto all his words."
-        ],
-        "links": [
-          "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/21.4-6"
+          {
+            "id": "UUID-s1",
+            "verse": "Hebrews 11:6 - 'But without faith it is impossible to please him...'",
+            "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/heb/11.6"
+          },
+          {
+            "id": "UUID-s2",
+            "verse": "Alma 32:21 - 'Faith is not to have a perfect knowledge...'",
+            "link": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/32.21"
+          }
         ]
       }
     ],
-    "summary": "Following prophetic counsel ensures alignment with God's will and brings profound personal blessings.",
     "quotes": [
-      "President Russell M. Nelson said, 'Hear Him by following prophetic guidance.'"
+      "Faith is the first principle in revealed religion and the foundation of all righteousness. – Joseph Smith"
     ],
-    "story": "In 1965, President Thomas S. Monson was strongly impressed to visit a sick member named Richard in Canada. Acting on prophetic guidance, he visited and brought comfort and peace to the family. This experience emphasizes the blessings of following prophetic promptings even when circumstances seem challenging.",
     "questions": [
-      "How can following prophetic counsel bring peace into your life?",
-      "What experiences have you had following the prophet’s guidance?"
+      "How can Mary's story inspire you in moments of doubt?",
+      "What can you do today to nurture your faith similarly?"
     ]
   },
   {
-    "title": "Challenges and Faith in Following the Prophet",
+    "id": "UUID-2",
+    "title": "Understanding Faith as Action and Power",
+    "summary": "Faith requires trust and proactive steps toward God’s promises.",
     "subpoints": [
       {
-        "text": "Navigating skepticism",
-        "explanation": "Overcoming doubt and skepticism through faith in prophetic guidance.",
+        "id": "UUID-2-1",
+        "text": "Faith as an Active Principle",
+        "explanation": "Faith is more than mere belief—it compels us to action, empowering our choices and shaping our destiny.",
         "scriptures": [
-          "2 Chronicles 20:20 - Believe in the Lord your God, so shall ye be established; believe his prophets, so shall ye prosper."
-        ],
-        "links": [
-          "https://www.churchofjesuschrist.org/study/scriptures/ot/2-chr/20.20"
-        ]
-      },
-      {
-        "text": "Historical examples of faith",
-        "explanation": "Early Saints who showed remarkable faith by following prophets through adversity.",
-        "scriptures": [
-          "D&C 1:38 - What I the Lord have spoken... whether by mine own voice or by the voice of my servants, it is the same."
-        ],
-        "links": [
-          "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/1.38"
+          {
+            "id": "UUID-s3",
+            "verse": "James 2:17 - 'Even so faith, if it hath not works, is dead...'",
+            "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/james/2.17"
+          },
+          {
+            "id": "UUID-s4",
+            "verse": "Ether 12:6 - 'Ye receive no witness until after the trial of your faith.'",
+            "link": "https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/12.6"
+          }
         ]
       }
     ],
-    "summary": "Faith helps us overcome modern skepticism and recognize the importance of prophetic counsel.",
     "quotes": [
-      "Elder Jeffrey R. Holland said, 'Trust God and believe in good things to come.'"
+      "True faith is always accompanied by action. – Dieter F. Uchtdorf"
     ],
-    "story": "Early Church members faced severe persecution and trials as they followed the counsel to gather together. Despite skepticism and opposition, their faith in prophetic guidance sustained them and strengthened their resolve.",
     "questions": [
-      "What can historical examples teach us about following prophets today?",
-      "How do you stay faithful amidst skepticism or challenges?",
-      "What role does personal revelation play in supporting prophetic guidance?"
-    ]
-  },
-  {
-    "title": "Applying Prophetic Teachings Daily",
-    "subpoints": [
-      {
-        "text": "Living by prophetic counsel",
-        "explanation": "Making daily decisions based on teachings from prophets.",
-        "scriptures": [
-          "Mosiah 2:41 - Consider on the blessed and happy state of those that keep the commandments of God."
-        ],
-        "links": [
-          "https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2.41"
-        ]
-      },
-      {
-        "text": "Seeking confirmation through prayer",
-        "explanation": "Prayer helps us understand and internalize prophetic teachings.",
-        "scriptures": [
-          "James 1:5 - If any of you lack wisdom, let him ask of God."
-        ],
-        "links": [
-          "https://www.churchofjesuschrist.org/study/scriptures/nt/james/1.5"
-        ]
-      }
-    ],
-    "summary": "Applying prophetic counsel enriches our daily decisions, bringing lasting happiness and clarity.",
-    "quotes": [
-      "President Gordon B. Hinckley said, 'We have a prophet upon the earth today.'"
-    ],
-    "story": "A young family decided to follow the prophet’s counsel by regularly holding family scripture study and prayer. Over time, they experienced increased unity, peace, and spiritual insights in their home, illustrating the practical benefits of applying prophetic teachings daily.",
-    "questions": [
-      "What steps can you take today to implement prophetic counsel?",
-      "How does prayer help you apply prophetic teachings?",
-      "Why is daily consistency important in following prophetic guidance?"
+      "What practical actions demonstrate your faith daily?",
+      "How can recognizing faith as action influence your decisions?"
     ]
   }
+  // Additional enriched slides here...
 ]
