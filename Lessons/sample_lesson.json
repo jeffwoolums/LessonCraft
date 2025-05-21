@@ -64,3 +64,21 @@
   }
   // Additional enriched slides here...
 ]
+{
+  "title": "Example Slide",
+  "subpoints": [
+    {
+      "text": "Faith is essential",
+      "scriptures": [
+        {
+          "verse": "Hebrews 11:1",
+          "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/heb/11.1"
+        },
+        {
+          "verse": "Alma 32:21",
+          "link": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/32.21"
+        }
+      ]
+    }
+  ]
+}
