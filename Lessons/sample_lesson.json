@@ -1,84 +1,83 @@
 [
   {
-    "id": "UUID-1",
-    "title": "Introduction: The Inspiring Faith of Mary Fielding Smith",
-    "summary": "An inspiring narrative demonstrating unwavering faith in challenging times.",
-    "introStory": "In the pioneer era, Mary Fielding Smith, widow of Hyrum Smith, faced intense adversity during her trek to the Salt Lake Valley. With faith as her compass, she defied impossible odds when her oxen became gravely ill. Rather than accepting defeat, she relied upon fervent prayer and profound trust in divine intervention. Miraculously, her faith was rewarded—her oxen healed, allowing her and her family to complete their journey safely. Her experience illustrates the profound reality that faith in God can overcome the harshest of trials.",
+    "id": "4E8AA6B4-F5E2-44E9-BC78-6F091D2E0D52",
+    "title": "Lesson Introduction",
     "subpoints": [
       {
-        "id": "UUID-1-1",
-        "text": "Mary Fielding Smith’s Faith",
-        "explanation": "Her unyielding faith became an inspiration to fellow pioneers and subsequent generations, teaching that belief and action intertwined can yield miraculous results.",
+        "id": "056D810B-FC28-44E9-892F-E783E23B6B34",
+        "text": "Faith is the assurance of things hoped for.",
+        "explanation": "Faith means trusting God and believing in things we cannot yet see.",
         "scriptures": [
           {
-            "id": "UUID-s1",
-            "verse": "Hebrews 11:6 - 'But without faith it is impossible to please him...'",
-            "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/heb/11.6"
+            "id": "7D0D3EB5-0E7B-450F-93C5-6D4993AE3C4A",
+            "verse": "Hebrews 11:1",
+            "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/heb/11.1"
           },
           {
-            "id": "UUID-s2",
-            "verse": "Alma 32:21 - 'Faith is not to have a perfect knowledge...'",
+            "id": "8E4C893A-67AF-4A1D-965E-1F1D479D0B73",
+            "verse": "Alma 32:21",
             "link": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/32.21"
           }
+        ],
+        "links": [
+          "https://www.churchofjesuschrist.org/topics/faith"
         ]
+      },
+      {
+        "id": "984AC0E1-3EDC-4726-8A8A-7AE1D89C9D66",
+        "text": "Examples of faith can be found throughout the scriptures.",
+        "explanation": "Scripture stories illustrate the power of faith in action.",
+        "scriptures": [
+          {
+            "id": "AF2BF8E6-FBC6-4DA2-9B5E-F4A67FCA42E0",
+            "verse": "Ether 12:6",
+            "link": "https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/12.6"
+          }
+        ],
+        "links": null
       }
     ],
+    "summary": "This lesson explores the concept of faith, its definition, and scriptural examples.",
+    "story": "Mary Fielding Smith demonstrated incredible faith during her journey across the plains, trusting that God would provide for her and her family despite significant obstacles.",
     "quotes": [
-      "Faith is the first principle in revealed religion and the foundation of all righteousness. – Joseph Smith"
+      "Faith is not to have a perfect knowledge of things; therefore if ye have faith ye hope for things which are not seen, which are true. — Alma 32:21"
     ],
     "questions": [
-      "How can Mary's story inspire you in moments of doubt?",
-      "What can you do today to nurture your faith similarly?"
+      "How can we cultivate greater faith in our daily lives?",
+      "What scriptural examples of faith resonate most deeply with you?"
     ]
   },
   {
-    "id": "UUID-2",
-    "title": "Understanding Faith as Action and Power",
-    "summary": "Faith requires trust and proactive steps toward God’s promises.",
+    "id": "B6C4F9E7-88F8-456B-A519-11A70352E9EF",
+    "title": "Faith Through Trials",
     "subpoints": [
       {
-        "id": "UUID-2-1",
-        "text": "Faith as an Active Principle",
-        "explanation": "Faith is more than mere belief—it compels us to action, empowering our choices and shaping our destiny.",
+        "id": "5D9E9C6C-48E8-46F1-B2A2-2839784017E1",
+        "text": "Trials often serve as catalysts for spiritual growth.",
+        "explanation": "Facing adversity with faith can refine and strengthen our testimony.",
         "scriptures": [
           {
-            "id": "UUID-s3",
-            "verse": "James 2:17 - 'Even so faith, if it hath not works, is dead...'",
-            "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/james/2.17"
+            "id": "E8772E1A-44AE-4DBD-954D-3483E31A99A1",
+            "verse": "Doctrine and Covenants 121:7–8",
+            "link": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/121.7-8"
           },
           {
-            "id": "UUID-s4",
-            "verse": "Ether 12:6 - 'Ye receive no witness until after the trial of your faith.'",
-            "link": "https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/12.6"
+            "id": "B73EBCB6-D1E5-4A4F-8CC3-740392E2C395",
+            "verse": "Romans 8:28",
+            "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/rom/8.28"
           }
-        ]
+        ],
+        "links": null
       }
     ],
+    "summary": "Trials faced with faith can deepen our trust and reliance on the Lord.",
+    "story": "Joseph Smith's experiences in Liberty Jail demonstrated how faith can sustain and comfort us through trials, ultimately drawing us closer to God.",
     "quotes": [
-      "True faith is always accompanied by action. – Dieter F. Uchtdorf"
+      "The Lord compensates the faithful for every loss. — Joseph B. Wirthlin"
     ],
     "questions": [
-      "What practical actions demonstrate your faith daily?",
-      "How can recognizing faith as action influence your decisions?"
+      "What trials have strengthened your faith the most?",
+      "How can we use trials as opportunities for spiritual growth?"
     ]
   }
- 
 ]
-{
-  "title": "Example Slide",
-  "subpoints": [
-    {
-      "text": "Faith is essential",
-      "scriptures": [
-        {
-          "verse": "Hebrews 11:1",
-          "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/heb/11.1"
-        },
-        {
-          "verse": "Alma 32:21",
-          "link": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/32.21"
-        }
-      ]
-    }
-  ]
-}
