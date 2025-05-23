@@ -86,11 +86,25 @@
       "How can we use trials as opportunities for spiritual growth?"
     ]
   }
+  [
   {
-    "topic": "Dieter F. Uchtdorf Conference Talk 2025 April",
-    "word_count": 250,
-    "points_per_slide": 3,
-    "scriptures_per_slide": 2,
-    "questions_per_slide": 2
-}    
+    "title": "Slide Title",
+    "story": "Detailed story here (minimum 250 words)...",
+    "summary": "Concise summary of the key points...",
+    "subpoints": [
+      {
+        "text": "Explanation text (100-130 words)...",
+        "scriptures": [
+          {"verse": "Verse reference", "link": "URL to verse"}
+        ],
+        "links": ["URL for resources"],
+        "quotes": ["Quote related to the topic"]
+      }
+    ],
+    "scriptures": [
+      {"verse": "Another scripture reference", "link": "Another URL"}
+    ],
+    "questions": ["Question 1?", "Question 2?"]
+  }
+]
 ]
