@@ -1,17 +1,23 @@
 [
   {
-    "id": "4E8AA6B4-F5E2-44E9-BC78-6F091D2E0D52",
-    "title": "Lesson Introduction",
+    "title": "Introduction: Example Story",
+    "story": "Detailed story (200-300 words)...",
     "subpoints": [
       {
-        "id": "056D810B-FC28-44E9-892F-E783E23B6B34",
-        "text": "Faith is the assurance of things hoped for.",
-        "explanation": "Faith means trusting God and believing in things we cannot yet see.",
+        "text": "Detailed explanation text...",
         "scriptures": [
           {
-            "id": "7D0D3EB5-0E7B-450F-93C5-6D4993AE3C4A",
-            "verse": "Hebrews 11:1",
-            "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/heb/11.1"
+            "verse": "John 3:16",
+            "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/john/3.16"
+          }
+        ],
+        "links": ["https://link.to.resource"]
+      }
+    ],
+    "scriptures": [
+      {
+        "verse": "Hebrews 11:1",
+        "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/heb/11.1"
           },
           {
             "id": "8E4C893A-67AF-4A1D-965E-1F1D479D0B73",
