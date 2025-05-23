@@ -1,110 +1,96 @@
-[
-  {
-    "title": "Introduction: Example Story",
-    "story": "Detailed story (200-300 words)...",
-    "subpoints": [
-      {
-        "text": "Detailed explanation text...",
-        "scriptures": [
-          {
-            "verse": "John 3:16",
-            "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/john/3.16"
-          }
-        ],
-        "links": ["https://link.to.resource"]
+{
+  "title": "Preparing to Meet the Savior",
+  "speaker": "Elder Dale G. Renlund",
+  "source": "General Conference April 2025",
+  "duration_minutes": 40,
+  "sections": [
+    {
+      "type": "Introduction",
+      "duration_minutes": 5,
+      "overview": "Overview context here...",
+      "engagement_activity": {
+        "question": "Have you ever felt nervous or anxious about the Second Coming?",
+        "discussion_points": ["Personal experiences", "Reassuring thoughts"]
       }
-    ],
-    "scriptures": [
-      {
-        "verse": "Hebrews 11:1",
-        "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/heb/11.1"
+    },
+    {
+      "type": "Parable",
+      "name": "Ten Virgins",
+      "duration_minutes": 10,
+      "points": [
+        {
+          "title": "Accept the Gospel Through Covenants",
+          "description": "Detailed, rich description here...",
+          "scripture": {
+            "verse": "D&C 45:56-57",
+            "link": "https://scripture.link"
           },
-          {
-            "id": "8E4C893A-67AF-4A1D-965E-1F1D479D0B73",
-            "verse": "Alma 32:21",
-            "link": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/32.21"
-          }
-        ],
-        "links": [
-          "https://www.churchofjesuschrist.org/topics/faith"
-        ]
-      },
-      {
-        "id": "984AC0E1-3EDC-4726-8A8A-7AE1D89C9D66",
-        "text": "Examples of faith can be found throughout the scriptures.",
-        "explanation": "Scripture stories illustrate the power of faith in action.",
-        "scriptures": [
-          {
-            "id": "AF2BF8E6-FBC6-4DA2-9B5E-F4A67FCA42E0",
-            "verse": "Ether 12:6",
-            "link": "https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/12.6"
-          }
-        ],
-        "links": null
-      }
-    ],
-    "summary": "This lesson explores the concept of faith, its definition, and scriptural examples.",
-    "story": "Mary Fielding Smith demonstrated incredible faith during her journey across the plains, trusting that God would provide for her and her family despite significant obstacles.",
-    "quotes": [
-      "Faith is not to have a perfect knowledge of things; therefore if ye have faith ye hope for things which are not seen, which are true. — Alma 32:21"
-    ],
-    "questions": [
-      "How can we cultivate greater faith in our daily lives?",
-      "What scriptural examples of faith resonate most deeply with you?"
-    ]
-  },
-  {
-    "id": "B6C4F9E7-88F8-456B-A519-11A70352E9EF",
-    "title": "Faith Through Trials",
-    "subpoints": [
-      {
-        "id": "5D9E9C6C-48E8-46F1-B2A2-2839784017E1",
-        "text": "Trials often serve as catalysts for spiritual growth.",
-        "explanation": "Facing adversity with faith can refine and strengthen our testimony.",
-        "scriptures": [
-          {
-            "id": "E8772E1A-44AE-4DBD-954D-3483E31A99A1",
-            "verse": "Doctrine and Covenants 121:7–8",
-            "link": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/121.7-8"
+          "question": "How have covenants helped you feel closer to the Savior?"
+        },
+        {
+          "title": "Seek the Holy Ghost",
+          "description": "Detailed description...",
+          "quote": "Consistent, personal acts of devotion invite the Holy Ghost.",
+          "question": "What daily habit invites the Holy Ghost into your life?"
+        },
+        {
+          "title": "Avoid Deception",
+          "description": "Detailed explanation here...",
+          "scripture": {
+            "verse": "Matthew 24:4-5",
+            "link": "https://scripture.link"
           },
-          {
-            "id": "B73EBCB6-D1E5-4A4F-8CC3-740392E2C395",
-            "verse": "Romans 8:28",
-            "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/rom/8.28"
-          }
-        ],
-        "links": null
-      }
-    ],
-    "summary": "Trials faced with faith can deepen our trust and reliance on the Lord.",
-    "story": "Joseph Smith's experiences in Liberty Jail demonstrated how faith can sustain and comfort us through trials, ultimately drawing us closer to God.",
-    "quotes": [
-      "The Lord compensates the faithful for every loss. — Joseph B. Wirthlin"
-    ],
-    "questions": [
-      "What trials have strengthened your faith the most?",
-      "How can we use trials as opportunities for spiritual growth?"
-    ]
-  }
-  [
-  {
-    "title": "Slide Title",
-    "story": "Detailed story here (minimum 250 words)...",
-    "summary": "Concise summary of the key points...",
-    "subpoints": [
-      {
-        "text": "Explanation text (100-130 words)...",
-        "scriptures": [
-          {"verse": "Verse reference", "link": "URL to verse"}
-        ],
-        "links": ["URL for resources"],
-        "quotes": ["Quote related to the topic"]
-      }
-    ],
-    "scriptures": [
-      {"verse": "Another scripture reference", "link": "Another URL"}
-    ],
-    "questions": ["Question 1?", "Question 2?"]
-  }
-]
-]
+          "question": "How does regular temple worship help you avoid deception?"
+        }
+      ]
+    },
+    {
+      "type": "Parable",
+      "name": "Talents",
+      "duration_minutes": 10,
+      "points": [
+        {
+          "title": "Magnify Your God-Given Abilities",
+          "description": "Rich explanation and example...",
+          "quote": "Rely upon the Savior to magnify your abilities.",
+          "question": "What talent has God given you to magnify?"
+        },
+        {
+          "title": "Avoid Comparison and Trust the Savior",
+          "description": "Detailed, encouraging message...",
+          "quote": "Enter into the joy of thy lord.",
+          "question": "How does the Savior’s grace help overcome inadequacy?"
+        }
+      ]
+    },
+    {
+      "type": "Parable",
+      "name": "Sheep and Goats",
+      "duration_minutes": 10,
+      "points": [
+        {
+          "title": "Serve Others as Serving the Savior",
+          "description": "Thoughtful, practical message...",
+          "scripture": {
+            "verse": "Matthew 25:40",
+            "link": "https://scripture.link"
+          },
+          "question": "Can you share a time you served someone as if serving the Savior?"
+        },
+        {
+          "title": "Use Your Gifts to Bless the Vulnerable",
+          "description": "Encouraging, actionable message...",
+          "quote": "Use your gifts to serve Heavenly Father’s children.",
+          "question": "Who can you bless with your unique gifts?"
+        }
+      ]
+    },
+    {
+      "type": "Conclusion",
+      "duration_minutes": 5,
+      "summary": "Brief summary tying together themes of the lesson...",
+      "final_question": "What specific action will you take this week to prepare to meet the Savior?",
+      "commitment_invitation": "Invite participants to write down their action and share briefly."
+    }
+  ]
+}
