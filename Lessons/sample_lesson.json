@@ -1,97 +1,137 @@
-
 {
-  "title": "Preparing to Meet the Savior",
-  "speaker": "Elder Dale G. Renlund",
-  "source": "General Conference April 2025",
-  "duration_minutes": 40,
-  "sections": [
-    {
-      "type": "Introduction",
-      "duration_minutes": 5,
-      "overview": "Overview context here...",
-      "engagement_activity": {
-        "question": "Have you ever felt nervous or anxious about the Second Coming?",
-        "discussion_points": ["Personal experiences", "Reassuring thoughts"]
-      }
-    },
-    {
-      "type": "Parable",
-      "name": "Ten Virgins",
-      "duration_minutes": 10,
-      "points": [
+    "title": "Preparing to Meet the Savior",
+    "lessonPoints": [
         {
-          "title": "Accept the Gospel Through Covenants",
-          "description": "Detailed, rich description here...",
-          "scripture": {
-            "verse": "D&C 45:56-57",
-            "link": "https://scripture.link"
-          },
-          "question": "How have covenants helped you feel closer to the Savior?"
+            "title": "Introduction: Elder Renlund's Message",
+            "story": "Elder Renlund shared a comforting message addressing fears about the Second Coming, reassuring that following the Savior’s teachings can replace anxiety with peace.",
+            "subpoints": [
+                {
+                    "text": "Importance of Preparation",
+                    "explanation": "Being spiritually prepared helps reduce anxiety and increase joy as we await the Savior's coming.",
+                    "scriptures": [
+                        {
+                            "verse": "Doctrine and Covenants 38:30",
+                            "link": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/38.30"
+                        }
+                    ],
+                    "quotes": ["Elder Dale G. Renlund: 'Preparation brings peace.'"],
+                    "links": ["https://www.churchofjesuschrist.org/study/general-conference/2025/04/25renlund?lang=eng"]
+                }
+            ],
+            "summary": "Overview of the talk and importance of spiritual preparation.",
+            "questions": ["How does preparing spiritually affect your perspective on the future?"],
+            "quotes": ["President Nelson: 'The future is bright for God’s covenant-keeping people.'"]
         },
         {
-          "title": "Seek the Holy Ghost",
-          "description": "Detailed description...",
-          "quote": "Consistent, personal acts of devotion invite the Holy Ghost.",
-          "question": "What daily habit invites the Holy Ghost into your life?"
+            "title": "Parable of the Ten Virgins",
+            "story": "Jesus taught about ten virgins waiting for the bridegroom, emphasizing personal spiritual preparedness symbolized by the oil in their lamps.",
+            "subpoints": [
+                {
+                    "text": "Accept the Gospel Through Covenants",
+                    "explanation": "Receiving the gospel and making covenants is foundational to spiritual preparedness.",
+                    "scriptures": [
+                        {
+                            "verse": "Doctrine and Covenants 45:56-57",
+                            "link": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/45.56-57"
+                        }
+                    ],
+                    "quotes": ["Elder Dale G. Renlund: 'Covenants anchor us to the Savior.'"],
+                    "links": ["https://www.churchofjesuschrist.org/temples"]
+                },
+                {
+                    "text": "Seek the Holy Ghost as a Guide",
+                    "explanation": "Consistent devotion allows the Holy Ghost to guide our daily decisions.",
+                    "scriptures": [
+                        {
+                            "verse": "John 14:26",
+                            "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/john/14.26"
+                        }
+                    ],
+                    "quotes": ["President Russell M. Nelson: 'Daily acts of devotion invite the Spirit.'"],
+                    "links": ["https://www.churchofjesuschrist.org/study/manual/gospel-topics/holy-ghost?lang=eng"]
+                },
+                {
+                    "text": "Avoid Deception",
+                    "explanation": "Following prophetic counsel protects us from deception.",
+                    "scriptures": [
+                        {
+                            "verse": "Matthew 24:4-5",
+                            "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/24.4-5"
+                        }
+                    ],
+                    "quotes": ["Elder Renlund: 'Trust in true disciples who lead us to Christ.'"],
+                    "links": ["https://www.churchofjesuschrist.org/study/general-conference"]
+                }
+            ],
+            "summary": "The importance of personal spiritual preparedness through covenants, the Holy Ghost, and trusted counsel.",
+            "questions": ["How do you ensure you're spiritually prepared daily?"]
         },
         {
-          "title": "Avoid Deception",
-          "description": "Detailed explanation here...",
-          "scripture": {
-            "verse": "Matthew 24:4-5",
-            "link": "https://scripture.link"
-          },
-          "question": "How does regular temple worship help you avoid deception?"
+            "title": "Parable of the Talents",
+            "story": "The master gave talents to three servants, illustrating the expectation to magnify what God has given us.",
+            "subpoints": [
+                {
+                    "text": "Magnify Your God-Given Abilities",
+                    "explanation": "God expects personal growth through our unique talents.",
+                    "scriptures": [
+                        {
+                            "verse": "Matthew 25:21",
+                            "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/25.21"
+                        }
+                    ],
+                    "quotes": ["Elder Renlund: 'Magnify the abilities God has given you.'"]
+                },
+                {
+                    "text": "Avoid Comparison",
+                    "explanation": "Our worth is not measured against others but in our effort to grow and serve.",
+                    "scriptures": [
+                        {
+                            "verse": "Galatians 6:4",
+                            "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/gal/6.4"
+                        }
+                    ],
+                    "quotes": ["Elder Renlund: 'The Savior helps us become our best selves.'"]
+                }
+            ],
+            "summary": "We must use our abilities without comparison, relying on Christ’s grace.",
+            "questions": ["What talents do you feel inspired to magnify?"]
+        },
+        {
+            "title": "Parable of the Sheep and Goats",
+            "story": "The Savior taught that our treatment of others reflects our service to Him, emphasizing compassion and kindness.",
+            "subpoints": [
+                {
+                    "text": "Serve Others as Serving the Savior",
+                    "explanation": "Acts of kindness towards others are directly tied to our devotion to Christ.",
+                    "scriptures": [
+                        {
+                            "verse": "Matthew 25:40",
+                            "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/25.40"
+                        }
+                    ],
+                    "quotes": ["Elder Renlund: 'Every act of service is an act of worship.'"]
+                },
+                {
+                    "text": "Blessing the Vulnerable",
+                    "explanation": "Using our gifts to support vulnerable individuals reflects Christ-like love.",
+                    "scriptures": [
+                        {
+                            "verse": "James 1:27",
+                            "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/james/1.27"
+                        }
+                    ],
+                    "quotes": ["Elder Renlund: 'Service is the essence of discipleship.'"]
+                }
+            ],
+            "summary": "Serving others, especially the vulnerable, is serving Christ Himself.",
+            "questions": ["Who can you serve this week?"]
+        },
+        {
+            "title": "Conclusion",
+            "story": "Elder Renlund concludes by emphasizing joyful preparation rather than fearful anticipation of Christ’s coming.",
+            "summary": "By following gospel principles and serving others, we can await the Savior’s return with joy.",
+            "questions": ["What steps can you take today to feel more prepared and joyful?"],
+            "quotes": ["President Nelson: 'Rejoice! And prepare for that day when our Savior comes again.'"]
         }
-      ]
-    },
-    {
-      "type": "Parable",
-      "name": "Talents",
-      "duration_minutes": 10,
-      "points": [
-        {
-          "title": "Magnify Your God-Given Abilities",
-          "description": "Rich explanation and example...",
-          "quote": "Rely upon the Savior to magnify your abilities.",
-          "question": "What talent has God given you to magnify?"
-        },
-        {
-          "title": "Avoid Comparison and Trust the Savior",
-          "description": "Detailed, encouraging message...",
-          "quote": "Enter into the joy of thy lord.",
-          "question": "How does the Savior’s grace help overcome inadequacy?"
-        }
-      ]
-    },
-    {
-      "type": "Parable",
-      "name": "Sheep and Goats",
-      "duration_minutes": 10,
-      "points": [
-        {
-          "title": "Serve Others as Serving the Savior",
-          "description": "Thoughtful, practical message...",
-          "scripture": {
-            "verse": "Matthew 25:40",
-            "link": "https://scripture.link"
-          },
-          "question": "Can you share a time you served someone as if serving the Savior?"
-        },
-        {
-          "title": "Use Your Gifts to Bless the Vulnerable",
-          "description": "Encouraging, actionable message...",
-          "quote": "Use your gifts to serve Heavenly Father’s children.",
-          "question": "Who can you bless with your unique gifts?"
-        }
-      ]
-    },
-    {
-      "type": "Conclusion",
-      "duration_minutes": 5,
-      "summary": "Brief summary tying together themes of the lesson...",
-      "final_question": "What specific action will you take this week to prepare to meet the Savior?",
-      "commitment_invitation": "Invite participants to write down their action and share briefly."
-    }
-  ]
+    ]
 }
