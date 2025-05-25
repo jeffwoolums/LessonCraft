@@ -19,39 +19,33 @@ app.post("/generate", async (req, res) => {
   const { topic, scriptureSources = [], storySources = [] } = req.body;
 
 const prompt = `
-Create a complete lesson titled "${topic}" in JSON format. Structure it EXACTLY as follows:
+Create a complete lesson titled "${topic}" in JSON format, structured EXACTLY as follows:
 
 {
-  "title": "${topic}",
-  "lessonPoints": [
-    {
-      "title": "Slide title",
-      "subpoints": [
+    "title": "${topic}",
+    "lessonPoints": [
         {
-          "text": "Main point clearly stated in one sentence",
-          "explanation": "Optional detailed doctrinal explanation",
-          "scriptures": [
-            {
-              "verse": "Full scripture verse text",
-              "link": "URL to scripture on churchofjesuschrist.org"
-            }
-          ],
-          "quotes": ["Relevant LDS quote"],
-          "links": ["Additional relevant URLs"]
+            "title": "Slide title",
+            "story": "Optional detailed narrative example (200-300 words)",
+            "subpoints": [
+                {
+                    "text": "Main point clearly stated in one sentence",
+                    "explanation": "Optional detailed doctrinal explanation",
+                    "scriptures": [
+                        {
+                            "verse": "Full scripture verse text",
+                            "link": "URL to scripture on churchofjesuschrist.org"
+                        }
+                    ],
+                    "quotes": ["Relevant LDS quote"],
+                    "links": ["Additional relevant URLs"]
+                }
+            ],
+            "summary": "Brief summary (1-2 sentences)",
+            "questions": ["Engaging group discussion question 1?", "Question 2?"],
+            "quotes": ["Additional relevant LDS quotes"]
         }
-      ],
-      "story": "Optional detailed narrative example (200-300 words)",
-      "summary": "Brief summary (1-2 sentences)",
-      "scriptures": [
-        {
-          "verse": "Additional scripture verse text",
-          "link": "URL to additional scripture"
-        }
-      ],
-      "questions": ["Engaging group discussion question 1?", "Question 2?"],
-      "quotes": ["Additional relevant LDS quotes"]
-    }
-  ]
+    ]
 }
 
 Provide ONLY valid JSON. No markdown or commentary.
