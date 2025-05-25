@@ -19,128 +19,88 @@ app.post("/generate", async (req, res) => {
   const { topic, scriptureSources = [], storySources = [] } = req.body;
 
 const prompt = `
-Create a detailed LDS lesson titled "${topic}" in JSON format. This comprehensive lesson should be structured precisely as follows for a 40-minute class, including relatable hymns and historical context where applicable:
+Create an LDS Sunday School lesson titled "${topic}" structured exactly as follows in JSON format. The lesson duration should be around 35–40 minutes.
 
 {
   "title": "${topic}",
   "lessonPoints": [
     {
       "title": "Introduction",
-      "story": "Detailed introductory narrative (about 300 words), sourced from official LDS publications, conference talks, or significant Church history events relevant to the lesson topic. Provide historical context if applicable.",
-      "historicalContext": "Brief historical background (if relevant to the story), about 2-3 sentences, highlighting cultural, historical, or doctrinal settings related to the story.",
+      "story": "Detailed introductory narrative (300-400 words), sourced from official LDS publications or Church history.",
+      "historicalContext": "Relevant brief historical background.",
       "relatableHymns": [{
-        "title": "Hymn Title",
-        "number": "Hymn number",
-        "link": "URL to hymn on churchofjesuschrist.org"
-      }],
-      "subpoints": [
-        {
-          "text": "Main introductory point clearly stated in one sentence",
-          "explanation": "Detailed doctrinal explanation",
-          "scriptures": [{
-            "verse": "Full scripture text",
-            "link": "URL to scripture on churchofjesuschrist.org"
-          }],
-          "quotes": ["Relevant LDS quote"],
-          "links": ["Optional URL"]
-        }
-      ],
-      "summary": "Brief summary (1-2 sentences)",
-      "questions": ["1-2 engaging introductory questions"],
-      "quotes": ["Additional relevant LDS quotes"]
-    },
-    {
-      "title": "First Key Teaching Section",
-      "story": "Brief narrative example (100-200 words), including historical context if applicable.",
-      "historicalContext": "Optional historical context (1-2 sentences)",
-      "relatableHymns": [{
-        "title": "Relevant Hymn Title",
+        "title": "Relevant Hymn",
         "number": "Hymn number",
         "link": "URL to hymn"
       }],
-      "subpoints": [
-        {
-          "text": "Clearly stated doctrinal point",
-          "explanation": "Detailed doctrinal explanation",
-          "scriptures": [{"verse": "Scripture verse", "link": "URL"}],
-          "quotes": ["Relevant LDS quote"]
-        },
-        {
-          "text": "Another clearly stated doctrinal point",
-          "explanation": "Detailed doctrinal explanation",
-          "scriptures": [{"verse": "Scripture verse", "link": "URL"}],
-          "quotes": ["Relevant LDS quote"]
-        }
-      ],
-      "summary": "Brief summary (1-2 sentences)",
-      "questions": ["2 thoughtful discussion questions"]
+      "subpoints": [{
+        "text": "Clear introductory point",
+        "explanation": "Detailed doctrinal explanation",
+        "scriptures": [{"verse": "Verse text", "link": "URL"}],
+        "quotes": ["LDS quote"],
+        "links": ["Additional URLs"]
+      }],
+      "questions": ["Opening question"],
+      "summary": "Brief summary (1-2 sentences)"
     },
     {
-      "title": "Second Key Teaching Section",
-      "story": "Brief narrative example (100-200 words), including historical context if applicable.",
-      "historicalContext": "Optional historical context (1-2 sentences)",
+      "title": "First Parable or Key Teaching",
+      "story": "Brief narrative example (200-300 words).",
+      "historicalContext": "Historical background (if applicable).",
       "relatableHymns": [{
-        "title": "Relevant Hymn Title",
+        "title": "Relevant Hymn",
         "number": "Hymn number",
-        "link": "URL to hymn"
+        "link": "URL"
       }],
       "subpoints": [
-        {
-          "text": "Clearly stated doctrinal point",
-          "explanation": "Detailed doctrinal explanation",
-          "scriptures": [{"verse": "Scripture verse", "link": "URL"}],
-          "quotes": ["Relevant LDS quote"]
-        }
+        {"text": "First key point clearly stated", "explanation": "Detailed explanation", "scriptures": [{"verse": "Verse text", "link": "URL"}], "quotes": ["LDS quote"]},
+        {"text": "Second key point clearly stated", "explanation": "Detailed explanation", "scriptures": [{"verse": "Verse text", "link": "URL"}], "quotes": ["LDS quote"]},
+        {"text": "Third key point clearly stated", "explanation": "Detailed explanation", "scriptures": [{"verse": "Verse text", "link": "URL"}], "quotes": ["LDS quote"]}
       ],
-      "summary": "Brief summary (1-2 sentences)",
-      "questions": ["2 thoughtful discussion questions"]
+      "questions": ["2-3 engaging questions"],
+      "summary": "Brief summary"
     },
     {
-      "title": "Third Key Teaching Section",
-      "story": "Brief narrative example (100-200 words), including historical context if applicable.",
-      "historicalContext": "Optional historical context (1-2 sentences)",
-      "relatableHymns": [{
-        "title": "Relevant Hymn Title",
-        "number": "Hymn number",
-        "link": "URL to hymn"
-      }],
+      "title": "Second Parable or Key Teaching",
+      "story": "Brief narrative example.",
+      "historicalContext": "Historical background.",
+      "relatableHymns": [{"title": "Hymn", "number": "number", "link": "URL"}],
       "subpoints": [
-        {
-          "text": "Clearly stated doctrinal point",
-          "explanation": "Detailed doctrinal explanation",
-          "scriptures": [{"verse": "Scripture verse", "link": "URL"}],
-          "quotes": ["Relevant LDS quote"]
-        }
+        {"text": "First detailed doctrinal point", "explanation": "...", "scriptures": [...], "quotes": [...]},
+        {"text": "Second detailed doctrinal point", "explanation": "...", "scriptures": [...], "quotes": [...]}
       ],
-      "summary": "Brief summary (1-2 sentences)",
-      "questions": ["2 thoughtful discussion questions"]
+      "questions": ["Engaging discussion questions"],
+      "summary": "Brief summary"
+    },
+    {
+      "title": "Third Parable or Key Teaching",
+      "story": "Brief narrative example.",
+      "historicalContext": "Historical background.",
+      "relatableHymns": [{"title": "Hymn", "number": "number", "link": "URL"}],
+      "subpoints": [
+        {"text": "Clear doctrinal point", "explanation": "...", "scriptures": [...], "quotes": [...]},
+        {"text": "Another doctrinal point", "explanation": "...", "scriptures": [...], "quotes": [...]}
+      ],
+      "questions": ["Engaging questions"],
+      "summary": "Brief summary"
     },
     {
       "title": "Conclusion",
-      "story": "Brief concluding narrative (100-150 words)",
-      "historicalContext": "Optional concluding historical context (1-2 sentences)",
-      "relatableHymns": [{
-        "title": "Closing Hymn Title",
-        "number": "Hymn number",
-        "link": "URL to hymn"
-      }],
-      "subpoints": [],
-      "summary": "Encapsulate key lessons clearly and briefly",
+      "story": "Closing narrative (100-150 words).",
+      "historicalContext": "Optional historical context",
+      "relatableHymns": [{"title": "Closing Hymn", "number": "number", "link": "URL"}],
       "questions": ["Final reflective question"],
-      "quotes": ["Closing inspirational quote"]
+      "quotes": ["Inspirational quote"],
+      "summary": "Encapsulate key lessons clearly"
     }
   ]
 }
 
-Guidelines:
-- Clearly align each historical context to enhance the understanding of each story.
-- Provide exact hymn titles, numbers, and URLs from churchofjesuschrist.org relevant to each lesson point.
-- Each doctrinal subpoint must include scriptures and quotes sourced directly from official LDS teachings.
-- Include thoughtful, engaging questions suitable for group discussion in an adult LDS Sunday School class.
+- Ensure each section has sufficient depth, multiple points, hymns, scriptures, historical context, and quotes.
+- Include thoughtful and practical discussion questions suitable for adult participants.
 
 Provide ONLY valid JSON. No markdown or commentary.
 `;
-
   try {
     console.log("⚙️ Sending request to OpenAI...");
     const completion = await openai.chat.completions.create({
