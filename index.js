@@ -19,34 +19,124 @@ app.post("/generate", async (req, res) => {
   const { topic, scriptureSources = [], storySources = [] } = req.body;
 
 const prompt = `
-Create a complete lesson titled "${topic}" in JSON format, structured EXACTLY as follows:
+Create a detailed LDS lesson titled "${topic}" in JSON format. This comprehensive lesson should be structured precisely as follows for a 40-minute class, including relatable hymns and historical context where applicable:
 
 {
-    "title": "${topic}",
-    "lessonPoints": [
+  "title": "${topic}",
+  "lessonPoints": [
+    {
+      "title": "Introduction",
+      "story": "Detailed introductory narrative (about 300 words), sourced from official LDS publications, conference talks, or significant Church history events relevant to the lesson topic. Provide historical context if applicable.",
+      "historicalContext": "Brief historical background (if relevant to the story), about 2-3 sentences, highlighting cultural, historical, or doctrinal settings related to the story.",
+      "relatableHymns": [{
+        "title": "Hymn Title",
+        "number": "Hymn number",
+        "link": "URL to hymn on churchofjesuschrist.org"
+      }],
+      "subpoints": [
         {
-            "title": "Slide title",
-            "story": "Optional detailed narrative example (200-300 words)",
-            "subpoints": [
-                {
-                    "text": "Main point clearly stated in one sentence",
-                    "explanation": "Optional detailed doctrinal explanation",
-                    "scriptures": [
-                        {
-                            "verse": "Full scripture verse text",
-                            "link": "URL to scripture on churchofjesuschrist.org"
-                        }
-                    ],
-                    "quotes": ["Relevant LDS quote"],
-                    "links": ["Additional relevant URLs"]
-                }
-            ],
-            "summary": "Brief summary (1-2 sentences)",
-            "questions": ["Engaging group discussion question 1?", "Question 2?"],
-            "quotes": ["Additional relevant LDS quotes"]
+          "text": "Main introductory point clearly stated in one sentence",
+          "explanation": "Detailed doctrinal explanation",
+          "scriptures": [{
+            "verse": "Full scripture text",
+            "link": "URL to scripture on churchofjesuschrist.org"
+          }],
+          "quotes": ["Relevant LDS quote"],
+          "links": ["Optional URL"]
         }
-    ]
+      ],
+      "summary": "Brief summary (1-2 sentences)",
+      "questions": ["1-2 engaging introductory questions"],
+      "quotes": ["Additional relevant LDS quotes"]
+    },
+    {
+      "title": "First Key Teaching Section",
+      "story": "Brief narrative example (100-200 words), including historical context if applicable.",
+      "historicalContext": "Optional historical context (1-2 sentences)",
+      "relatableHymns": [{
+        "title": "Relevant Hymn Title",
+        "number": "Hymn number",
+        "link": "URL to hymn"
+      }],
+      "subpoints": [
+        {
+          "text": "Clearly stated doctrinal point",
+          "explanation": "Detailed doctrinal explanation",
+          "scriptures": [{"verse": "Scripture verse", "link": "URL"}],
+          "quotes": ["Relevant LDS quote"]
+        },
+        {
+          "text": "Another clearly stated doctrinal point",
+          "explanation": "Detailed doctrinal explanation",
+          "scriptures": [{"verse": "Scripture verse", "link": "URL"}],
+          "quotes": ["Relevant LDS quote"]
+        }
+      ],
+      "summary": "Brief summary (1-2 sentences)",
+      "questions": ["2 thoughtful discussion questions"]
+    },
+    {
+      "title": "Second Key Teaching Section",
+      "story": "Brief narrative example (100-200 words), including historical context if applicable.",
+      "historicalContext": "Optional historical context (1-2 sentences)",
+      "relatableHymns": [{
+        "title": "Relevant Hymn Title",
+        "number": "Hymn number",
+        "link": "URL to hymn"
+      }],
+      "subpoints": [
+        {
+          "text": "Clearly stated doctrinal point",
+          "explanation": "Detailed doctrinal explanation",
+          "scriptures": [{"verse": "Scripture verse", "link": "URL"}],
+          "quotes": ["Relevant LDS quote"]
+        }
+      ],
+      "summary": "Brief summary (1-2 sentences)",
+      "questions": ["2 thoughtful discussion questions"]
+    },
+    {
+      "title": "Third Key Teaching Section",
+      "story": "Brief narrative example (100-200 words), including historical context if applicable.",
+      "historicalContext": "Optional historical context (1-2 sentences)",
+      "relatableHymns": [{
+        "title": "Relevant Hymn Title",
+        "number": "Hymn number",
+        "link": "URL to hymn"
+      }],
+      "subpoints": [
+        {
+          "text": "Clearly stated doctrinal point",
+          "explanation": "Detailed doctrinal explanation",
+          "scriptures": [{"verse": "Scripture verse", "link": "URL"}],
+          "quotes": ["Relevant LDS quote"]
+        }
+      ],
+      "summary": "Brief summary (1-2 sentences)",
+      "questions": ["2 thoughtful discussion questions"]
+    },
+    {
+      "title": "Conclusion",
+      "story": "Brief concluding narrative (100-150 words)",
+      "historicalContext": "Optional concluding historical context (1-2 sentences)",
+      "relatableHymns": [{
+        "title": "Closing Hymn Title",
+        "number": "Hymn number",
+        "link": "URL to hymn"
+      }],
+      "subpoints": [],
+      "summary": "Encapsulate key lessons clearly and briefly",
+      "questions": ["Final reflective question"],
+      "quotes": ["Closing inspirational quote"]
+    }
+  ]
 }
+
+Guidelines:
+- Clearly align each historical context to enhance the understanding of each story.
+- Provide exact hymn titles, numbers, and URLs from churchofjesuschrist.org relevant to each lesson point.
+- Each doctrinal subpoint must include scriptures and quotes sourced directly from official LDS teachings.
+- Include thoughtful, engaging questions suitable for group discussion in an adult LDS Sunday School class.
 
 Provide ONLY valid JSON. No markdown or commentary.
 `;
