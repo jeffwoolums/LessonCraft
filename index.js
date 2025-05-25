@@ -18,40 +18,44 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 app.post("/generate", async (req, res) => {
   const { topic, scriptureSources = [], storySources = [] } = req.body;
 
-  const prompt = `
-  Create a complete lesson titled "${topic}" in JSON format. 
-  
-  Structure it EXACTLY as follows:
-  
-  {
-    "title": "${topic}",
-    "lessonPoints": [{
+const prompt = `
+Create a complete lesson titled "${topic}" in JSON format. Structure it EXACTLY as follows:
+
+{
+  "title": "${topic}",
+  "lessonPoints": [
+    {
       "title": "Slide title",
-      "subpoints": [{
-        "text": "Main point clearly stated in one sentence",
-        "explanation": "Optional detailed doctrinal explanation",
-        "scriptures": [{
-          "verse": "Full scripture verse text",
-          "link": "URL to scripture on churchofjesuschrist.org"
-        }],
-        "quotes": ["Relevant LDS quote"],
-        "links": ["Additional relevant URLs"]
-      }],
+      "subpoints": [
+        {
+          "text": "Main point clearly stated in one sentence",
+          "explanation": "Optional detailed doctrinal explanation",
+          "scriptures": [
+            {
+              "verse": "Full scripture verse text",
+              "link": "URL to scripture on churchofjesuschrist.org"
+            }
+          ],
+          "quotes": ["Relevant LDS quote"],
+          "links": ["Additional relevant URLs"]
+        }
+      ],
       "story": "Optional detailed narrative example (200-300 words)",
       "summary": "Brief summary (1-2 sentences)",
-      "scriptures": [{
-        "verse": "Additional scripture verse text",
-        "link": "URL to additional scripture"
-      }],
+      "scriptures": [
+        {
+          "verse": "Additional scripture verse text",
+          "link": "URL to additional scripture"
+        }
+      ],
       "questions": ["Engaging group discussion question 1?", "Question 2?"],
       "quotes": ["Additional relevant LDS quotes"]
-    }]
-  }
-  
-  Sources: ${scriptureSources.join(", ")}, ${storySources.join(", ")}.
-  
-  Provide ONLY valid JSON. No markdown or commentary.
-  `;
+    }
+  ]
+}
+
+Provide ONLY valid JSON. No markdown or commentary.
+`;
 
   try {
     console.log("⚙️ Sending request to OpenAI...");
