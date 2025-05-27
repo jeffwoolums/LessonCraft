@@ -19,87 +19,126 @@ app.post("/generate", async (req, res) => {
   const { topic, scriptureSources = [], storySources = [] } = req.body;
 
 const prompt = `
-Create an LDS Sunday School lesson titled "${topic}" structured exactly as follows in JSON format. The lesson duration should be around 35–40 minutes.
+Create an engaging and historically accurate LDS Sunday School lesson titled "${topic}". 
+Structure the lesson in JSON format exactly as shown below. The lesson duration should be 40-45 minutes.
 
 {
   "title": "${topic}",
   "lessonPoints": [
     {
       "title": "Introduction",
-      "story": "Detailed introductory narrative (300-400 words), sourced from official LDS publications or Church history.",
-      "historicalContext": "Relevant brief historical background.",
+      "story": "Provide a rich, detailed introductory narrative (350-450 words) clearly illustrating the significance of the topic through an engaging story from official LDS publications or documented Church history.",
+      "historicalContext": "Provide substantial historical background, including specific events, dates, locations, and key figures directly connected to the lesson topic. Ensure this context is accurate and informative.",
       "relatableHymns": [{
         "title": "Relevant Hymn",
         "number": "Hymn number",
         "link": "URL to hymn"
       }],
       "subpoints": [{
-        "text": "Clear introductory point",
-        "explanation": "Detailed doctrinal explanation",
-        "scriptures": [{"verse": "Verse text", "link": "URL"}],
-        "quotes": ["LDS quote"],
-        "links": ["Additional URLs"]
+        "text": "Clear introductory doctrinal point",
+        "explanation": "Provide a thorough, in-depth doctrinal explanation with scriptural support.",
+        "scriptures": [{"verse": "Complete verse text", "link": "Direct URL to verse"}],
+        "quotes": ["Relevant and inspirational quote from LDS Church leaders or publications."],
+        "links": ["URL to further resources or church materials if applicable"]
       }],
-      "questions": ["Opening question"],
-      "summary": "Brief summary (1-2 sentences)"
+      "questions": ["Thought-provoking and practical opening discussion question"],
+      "summary": "Detailed and practical summary (3-4 sentences highlighting key takeaways clearly)"
     },
     {
       "title": "First Parable or Key Teaching",
-      "story": "Brief narrative example (200-300 words).",
-      "historicalContext": "Historical background (if applicable).",
+      "story": "Provide a detailed, illustrative parable or example (250-350 words) with clear spiritual or doctrinal lessons.",
+      "historicalContext": "Detailed historical background or context for this teaching, including specific references if available.",
       "relatableHymns": [{
         "title": "Relevant Hymn",
         "number": "Hymn number",
         "link": "URL"
       }],
       "subpoints": [
-        {"text": "First key point clearly stated", "explanation": "Detailed explanation", "scriptures": [{"verse": "Verse text", "link": "URL"}], "quotes": ["LDS quote"]},
-        {"text": "Second key point clearly stated", "explanation": "Detailed explanation", "scriptures": [{"verse": "Verse text", "link": "URL"}], "quotes": ["LDS quote"]},
-        {"text": "Third key point clearly stated", "explanation": "Detailed explanation", "scriptures": [{"verse": "Verse text", "link": "URL"}], "quotes": ["LDS quote"]}
+        {
+          "text": "First clear doctrinal point",
+          "explanation": "Detailed and insightful explanation with scriptural support.",
+          "scriptures": [{"verse": "Complete verse text", "link": "URL"}],
+          "quotes": ["Relevant LDS quote"]
+        },
+        {
+          "text": "Second clear doctrinal point",
+          "explanation": "Detailed explanation clearly connected to daily life application.",
+          "scriptures": [{"verse": "Complete verse text", "link": "URL"}],
+          "quotes": ["Relevant LDS quote"]
+        },
+        {
+          "text": "Third doctrinal or practical point",
+          "explanation": "Practical and applicable explanation, strongly supported by scriptures.",
+          "scriptures": [{"verse": "Complete verse text", "link": "URL"}],
+          "quotes": ["Inspirational LDS quote"]
+        }
       ],
-      "questions": ["2-3 engaging questions"],
-      "summary": "Brief summary"
+      "questions": ["Two to three engaging, application-based questions"],
+      "summary": "Detailed summary with practical applications clearly articulated"
     },
     {
       "title": "Second Parable or Key Teaching",
-      "story": "Brief narrative example.",
-      "historicalContext": "Historical background.",
-      "relatableHymns": [{"title": "Hymn", "number": "number", "link": "URL"}],
+      "story": "Provide another richly detailed parable or historical example (250-350 words).",
+      "historicalContext": "Relevant historical insights, including dates or individuals involved.",
+      "relatableHymns": [{"title": "Relevant Hymn", "number": "number", "link": "URL"}],
       "subpoints": [
-        {"text": "First detailed doctrinal point", "explanation": "...", "scriptures": [...], "quotes": [...]},
-        {"text": "Second detailed doctrinal point", "explanation": "...", "scriptures": [...], "quotes": [...]}
+        {
+          "text": "Detailed doctrinal teaching",
+          "explanation": "Clear doctrinal insights and scriptural backing.",
+          "scriptures": [{"verse": "Complete verse text", "link": "URL"}],
+          "quotes": ["LDS quote"]
+        },
+        {
+          "text": "Second doctrinal point",
+          "explanation": "Insightful explanation with clear daily life applications.",
+          "scriptures": [{"verse": "Complete verse text", "link": "URL"}],
+          "quotes": ["Inspirational LDS quote"]
+        }
       ],
       "questions": ["Engaging discussion questions"],
-      "summary": "Brief summary"
+      "summary": "Well-articulated and practical summary"
     },
     {
       "title": "Third Parable or Key Teaching",
-      "story": "Brief narrative example.",
-      "historicalContext": "Historical background.",
-      "relatableHymns": [{"title": "Hymn", "number": "number", "link": "URL"}],
+      "story": "Additional clear, detailed example or historical narrative (250-350 words).",
+      "historicalContext": "Rich historical context clearly linking the story to LDS Church history or scriptures.",
+      "relatableHymns": [{"title": "Relevant Hymn", "number": "number", "link": "URL"}],
       "subpoints": [
-        {"text": "Clear doctrinal point", "explanation": "...", "scriptures": [...], "quotes": [...]},
-        {"text": "Another doctrinal point", "explanation": "...", "scriptures": [...], "quotes": [...]}
+        {
+          "text": "Key doctrinal point clearly articulated",
+          "explanation": "Clear doctrinal and practical application.",
+          "scriptures": [{"verse": "Complete verse text", "link": "URL"}],
+          "quotes": ["Relevant inspirational LDS quote"]
+        },
+        {
+          "text": "Additional teaching point",
+          "explanation": "Detailed doctrinal insight with practical applications.",
+          "scriptures": [{"verse": "Complete verse text", "link": "URL"}],
+          "quotes": ["Inspirational LDS quote"]
+        }
       ],
-      "questions": ["Engaging questions"],
-      "summary": "Brief summary"
+      "questions": ["Discussion-inviting questions"],
+      "summary": "Detailed and practical summary clearly encapsulating the section’s teaching"
     },
     {
       "title": "Conclusion",
-      "story": "Closing narrative (100-150 words).",
-      "historicalContext": "Optional historical context",
+      "story": "Concise and inspiring closing narrative (150-200 words) summarizing the key messages and reinforcing practical applications.",
+      "historicalContext": "Optional relevant historical wrap-up",
       "relatableHymns": [{"title": "Closing Hymn", "number": "number", "link": "URL"}],
-      "questions": ["Final reflective question"],
-      "quotes": ["Inspirational quote"],
-      "summary": "Encapsulate key lessons clearly"
+      "questions": ["One final reflective and practical question for the group"],
+      "quotes": ["Inspirational and motivating LDS quote"],
+      "summary": "Clearly encapsulate the lesson’s core teachings and practical takeaways"
     }
   ]
 }
 
-- Ensure each section has sufficient depth, multiple points, hymns, scriptures, historical context, and quotes.
-- Include thoughtful and practical discussion questions suitable for adult participants.
+Important guidelines for generation:
+- Include detailed historical contexts (dates, locations, individuals, and events).
+- Provide rich, insightful summaries clearly focused on practical application.
+- Ensure each parable or key teaching is thoroughly explained with clear doctrinal and practical insights.
+- Include multiple scriptures, relevant hymns, meaningful LDS quotes, and thoughtful discussion questions appropriate for adults.
 
-Provide ONLY valid JSON. No markdown or commentary.
+Respond strictly with valid JSON. No markdown, explanations, or additional commentary.
 `;
   try {
     console.log("⚙️ Sending request to OpenAI...");
