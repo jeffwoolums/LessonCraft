@@ -38,27 +38,22 @@ Structure the lesson precisely in the JSON format below, explicitly including AL
   "title": "Lesson Title",
   "lessonPoints": [
     {
-      "title": "Introduction",
-      "summary": "Brief one-sentence summary.",
-      "story": "Engaging narrative (350-450 words).",
-      "historicalContext": "Historical context (150-200 words).",
-      "scriptures": [
-        {
-          "verse": "Complete scripture verse text",
-          "reference": "Book Chapter:Verse (e.g., Alma 32:21)",
-          "link": "Direct URL"
-        }
-      ],
-      "quotes": [
-        {
-          "text": "Inspirational quote.",
-          "author": "Author name",
-          "source": "Source URL or reference"
-        }
-      ],
-      "questions": ["Reflective question"]
+      "title": "Point 1",
+      "summary": "Summary",
+      "story": "Story here",
+      "historicalContext": "Historical context",
+      "quotes": [{"text": "", "author": "", "source": ""}],
+      "scriptures": [{"verse": "", "reference": "", "link": ""}],
+      "questions": [],
+      "relatableHymns": [],
+      "subpoints": [],
+      "layoutSettings": {
+        "sizing": {"width": 375, "height": 667},
+        "margins": {"top": 16, "bottom": 16, "left": 16, "right": 16},
+        "borders": {"color": "gray", "width": 2, "radius": 8},
+        "graphicSettings": {"shadowEnabled": true, "shadowRadius": 5, "shadowOpacity": 0.3}
+      }
     }
-    // Include additional lesson points similarly
   ]
 }
 
