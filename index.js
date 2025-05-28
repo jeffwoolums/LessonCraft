@@ -38,15 +38,23 @@ Structure the lesson precisely in the JSON format below, explicitly including AL
   "title": "Lesson Title",
   "lessonPoints": [
     {
-      "title": "Point 1",
-      "summary": "Summary",
-      "story": "Story here",
-      "historicalContext": "Historical context",
-      "quotes": [{"text": "", "author": "", "source": ""}],
+      "title": "Introduction",
+      "summary": "Brief lesson intro summary.",
+      "story": "A relevant, inspiring, or historical story.",
+      "historicalContext": "Brief historical context if applicable.",
+      "relatableHymns": [{"title": "", "number": "", "link": ""}],
       "scriptures": [{"verse": "", "reference": "", "link": ""}],
-      "questions": [],
-      "relatableHymns": [],
-      "subpoints": [],
+      "quotes": [{"text": "", "author": "", "source": ""}],
+      "subpoints": [
+        {
+          "text": "First key teaching or parable",
+          "explanation": "Explanation and application to modern life.",
+          "scriptures": [{"verse": "", "reference": "", "link": ""}],
+          "quotes": [{"text": "", "author": "", "source": ""}],
+          "links": []
+        }
+      ],
+      "questions": ["Discussion question related to the point"],
       "layoutSettings": {
         "sizing": {"width": 375, "height": 667},
         "margins": {"top": 16, "bottom": 16, "left": 16, "right": 16},
