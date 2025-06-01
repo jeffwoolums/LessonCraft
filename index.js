@@ -1,3 +1,4 @@
+// index.js
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -9,30 +10,36 @@ const PORT = process.env.PORT || 10000;
 app.use(cors());
 app.use(bodyParser.json());
 
+// Health endpoint
 app.get("/health", (req, res) => {
   res.send("🩺 Server is alive.");
 });
 
+// OpenAI client
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
+// Lesson generator endpoint
 app.post("/generate", async (req, res) => {
+  // Extract lesson input parameters with defaults
   const {
     topic,
     scriptures_per_slide = 2,
     include_quotes = true,
-    speaker = "Default",
-    source = "Not specified",
+    speaker = "",
+    source = "",
     audience = "Adult Sunday School Class",
     tone = "Inspirational",
     duration_minutes = 45,
     points_per_slide = 3,
-    questions_per_slide = 2
+    questions_per_slide = 2,
+    introWordCount = 300 // support for custom intro length if desired
   } = req.body;
 
+  // Construct the prompt for OpenAI
   const prompt = `
-Create an engaging and historically accurate LDS Sunday School lesson titled "${topic}".
+Create an engaging, historically accurate LDS Sunday School lesson titled "${topic}".
 
-Structure the lesson precisely in the JSON format below, explicitly including ALL REQUIRED FIELDS:
+STRUCTURE the lesson PRECISELY in the JSON format below. DO NOT include any "id" fields at any level:
 
 {
   "title": "Lesson Title",
@@ -65,14 +72,18 @@ Structure the lesson precisely in the JSON format below, explicitly including AL
   ]
 }
 
-CRITICAL:
-- EVERY scripture MUST have "verse", "reference", and "link" fields explicitly included.
-- Every section must fully comply with this JSON structure without omissions.
+Instructions:
+- The introduction should be around ${introWordCount} words.
+- Generate ${points_per_slide} major lesson points ("lessonPoints" array).
+- Each point must include all listed fields, even if some arrays are empty.
+- Include ${scriptures_per_slide} scripture references per lesson point, and ${questions_per_slide} discussion questions per point.
+- Use a warm, ${tone} tone for an ${audience}.
 
-Respond strictly with valid JSON ONLY. No markdown or extra explanations.
+Respond ONLY with valid JSON (no markdown or extra explanation).
 `;
 
   try {
+    // Call OpenAI for completion
     const completion = await openai.chat.completions.create({
       model: "gpt-4o",
       messages: [
@@ -83,7 +94,8 @@ Respond strictly with valid JSON ONLY. No markdown or extra explanations.
     });
 
     let responseText = completion.choices[0].message.content.trim();
-    responseText = responseText.replace(/^```json|```$/g, '').trim();
+    // Remove accidental markdown fences if present
+    responseText = responseText.replace(/^```json|^```|```$/g, '').trim();
 
     const lesson = JSON.parse(responseText);
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
