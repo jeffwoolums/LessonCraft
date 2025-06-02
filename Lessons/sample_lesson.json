@@ -1,8 +1,10 @@
 {
   "title": "Preparing to Meet the Savior",
+  "durationEstimate": 45,
   "lessonPoints": [
     {
       "title": "Introduction: Elder Renlund's Message",
+      "summary": "Elder Renlund shared a comforting message addressing fears about the Second Coming, reassuring that following the Savior’s teachings can replace anxiety with peace.",
       "story": "Elder Renlund shared a comforting message addressing fears about the Second Coming, reassuring that following the Savior’s teachings can replace anxiety with peace.",
       "historicalContext": "This lesson references Elder Renlund's 2025 General Conference address.",
       "relatableHymns": [
@@ -12,28 +14,51 @@
           "link": "https://www.churchofjesuschrist.org/music/library/hymns/come-follow-me?lang=eng"
         }
       ],
+      "scriptures": [
+        {
+          "verse": "And now, verily I say unto you, and what I say unto one I say unto all, be prepared for the wedding; for I will come in an hour when ye think not.",
+          "reference": "Doctrine and Covenants 38:30",
+          "link": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/38.30?lang=eng#p30"
+        }
+      ],
+      "quotes": [
+        {
+          "text": "Preparation brings peace.",
+          "author": "Elder Dale G. Renlund",
+          "source": "General Conference, April 2025 (Fictional)",
+          "link": "https://www.churchofjesuschrist.org/study/general-conference/2025/04/25renlund?lang=eng"
+        },
+        {
+          "text": "The future is bright for God’s covenant-keeping people.",
+          "author": "President Russell M. Nelson",
+          "source": "General Conference, October 2023",
+          "link": "https://www.churchofjesuschrist.org/study/general-conference/2023/10/45nelson?lang=eng"
+        }
+      ],
+      "artworkURL": "https://media.churchofjesuschrist.org/media/images/a-saints-preparation-for-the-second-coming-1111622-wallpaper.jpg",
       "subpoints": [
         {
           "text": "Importance of Preparation",
           "explanation": "Being spiritually prepared helps reduce anxiety and increase joy as we await the Savior's coming.",
           "scriptures": [
             {
-              "verse": "Doctrine and Covenants 38:30",
-              "link": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/38.30"
+              "verse": "And if ye are prepared ye shall not fear.",
+              "reference": "Doctrine and Covenants 38:30",
+              "link": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/38.30?lang=eng#p30"
             }
           ],
-          "quotes": ["Elder Dale G. Renlund: 'Preparation brings peace.'"],
+          "quotes": [],
           "links": ["https://www.churchofjesuschrist.org/study/general-conference/2025/04/25renlund?lang=eng"]
         }
       ],
-      "summary": "Overview of the talk and importance of spiritual preparation.",
       "questions": ["How does preparing spiritually affect your perspective on the future?"],
-      "quotes": ["President Nelson: 'The future is bright for God’s covenant-keeping people.'"]
+      "layoutSettings": {}
     },
     {
       "title": "Parable of the Ten Virgins",
+      "summary": "Jesus taught about ten virgins waiting for the bridegroom, emphasizing personal spiritual preparedness symbolized by the oil in their lamps.",
       "story": "Jesus taught about ten virgins waiting for the bridegroom, emphasizing personal spiritual preparedness symbolized by the oil in their lamps.",
-      "historicalContext": "Jesus taught this parable on the Mount of Olives, shortly before His crucifixion.",
+      "historicalContext": "Jesus taught this parable on the Mount of Olives, shortly before His crucifixion, emphasizing the need for constant vigilance and readiness for His return.",
       "relatableHymns": [
         {
           "title": "Keep the Commandments",
@@ -41,51 +66,90 @@
           "link": "https://www.churchofjesuschrist.org/music/library/hymns/keep-the-commandments?lang=eng"
         }
       ],
+      "scriptures": [
+        {
+          "verse": "Then shall the kingdom of heaven be likened unto ten virgins, which took their lamps, and went forth to meet the bridegroom.",
+          "reference": "Matthew 25:1",
+          "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/25.1?lang=eng#p1"
+        },
+        {
+          "verse": "And five of them were wise, and five were foolish.",
+          "reference": "Matthew 25:2",
+          "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/25.2?lang=eng#p2"
+        }
+      ],
+      "quotes": [
+        {
+          "text": "Covenants anchor us to the Savior.",
+          "author": "Elder Dale G. Renlund",
+          "source": "General Conference, April 2025 (Fictional)",
+          "link": "https://www.churchofjesuschrist.org/temples"
+        }
+      ],
+      "artworkURL": "https://media.churchofjesuschrist.org/media/images/wise-and-foolish-virgins-1111622-wallpaper.jpg",
       "subpoints": [
         {
           "text": "Accept the Gospel Through Covenants",
           "explanation": "Receiving the gospel and making covenants is foundational to spiritual preparedness.",
           "scriptures": [
             {
-              "verse": "Doctrine and Covenants 45:56-57",
-              "link": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/45.56-57"
+              "verse": "Wherefore, be faithful, praying always, having your lamps trimmed and burning, and oil with you, that you may be ready at the coming of the Bridegroom.",
+              "reference": "Doctrine and Covenants 45:56-57",
+              "link": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/45.56-57?lang=eng#p56"
             }
           ],
-          "quotes": ["Elder Dale G. Renlund: 'Covenants anchor us to the Savior.'"],
+          "quotes": [],
           "links": ["https://www.churchofjesuschrist.org/temples"]
         },
         {
           "text": "Seek the Holy Ghost as a Guide",
-          "explanation": "Consistent devotion allows the Holy Ghost to guide our daily decisions.",
+          "explanation": "Consistent devotion allows the Holy Ghost to guide our daily decisions, filling our lamps with spiritual light.",
           "scriptures": [
             {
-              "verse": "John 14:26",
-              "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/john/14.26"
+              "verse": "But the Comforter, which is the Holy Ghost, whom the Father will send in my name, he shall teach you all things, and bring all things to your remembrance, whatsoever I have said unto you.",
+              "reference": "John 14:26",
+              "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/john/14.26?lang=eng#p26"
             }
           ],
-          "quotes": ["President Russell M. Nelson: 'Daily acts of devotion invite the Spirit.'"],
+          "quotes": [
+            {
+              "text": "Daily acts of devotion invite the Spirit.",
+              "author": "President Russell M. Nelson",
+              "source": "General Conference, April 2018",
+              "link": "https://www.churchofjesuschrist.org/study/general-conference/2018/04/revelation-for-the-church-revelation-for-our-lives?lang=eng"
+            }
+          ],
           "links": ["https://www.churchofjesuschrist.org/study/manual/gospel-topics/holy-ghost?lang=eng"]
         },
         {
           "text": "Avoid Deception",
-          "explanation": "Following prophetic counsel protects us from deception.",
+          "explanation": "Following prophetic counsel protects us from deception and ensures our spiritual lamps are not extinguished by false lights.",
           "scriptures": [
             {
-              "verse": "Matthew 24:4-5",
-              "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/24.4-5"
+              "verse": "And Jesus answered and said unto them, Take heed that no man deceive you. For many shall come in my name, saying, I am Christ; and shall deceive many.",
+              "reference": "Matthew 24:4-5",
+              "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/24.4-5?lang=eng#p4"
             }
           ],
-          "quotes": ["Elder Renlund: 'Trust in true disciples who lead us to Christ.'"],
+          "quotes": [
+            {
+              "text": "Trust in true disciples who lead us to Christ.",
+              "author": "Elder Dale G. Renlund",
+              "source": "General Conference, April 2025 (Fictional)",
+              "link": "https://www.churchofjesuschrist.org/study/general-conference"
+            }
+          ],
           "links": ["https://www.churchofjesuschrist.org/study/general-conference"]
         }
       ],
-      "summary": "The importance of personal spiritual preparedness through covenants, the Holy Ghost, and trusted counsel.",
-      "questions": ["How do you ensure you're spiritually prepared daily?"]
+      "questions": ["How do you ensure you're spiritually prepared daily and keep your lamp burning?"],
+      "layoutSettings": {}
     },
     {
       "title": "Parable of the Talents",
-      "story": "The master gave talents to three servants, illustrating the expectation to magnify what God has given us.",
-      "historicalContext": "This parable was also shared by Jesus shortly before His crucifixion, emphasizing accountability and personal growth.",
+      "summary": "The master gave talents to three servants, illustrating the expectation to magnify what God has given us and use our gifts wisely.",
+      "story": "The master gave talents to three servants, illustrating the expectation to magnify what God has given us and use our gifts wisely.",
+      "historicalContext": "This parable was also shared by Jesus shortly before His crucifixion, emphasizing accountability and personal growth in using divine gifts.",
       "relatableHymns": [
         {
           "title": "Improve the Shining Moments",
@@ -93,37 +157,65 @@
           "link": "https://www.churchofjesuschrist.org/music/library/hymns/improve-the-shining-moments?lang=eng"
         }
       ],
+      "scriptures": [
+        {
+          "verse": "His lord said unto him, Well done, thou good and faithful servant: thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord.",
+          "reference": "Matthew 25:21",
+          "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/25.21?lang=eng#p21"
+        }
+      ],
+      "quotes": [
+        {
+          "text": "Magnify the abilities God has given you.",
+          "author": "Elder Dale G. Renlund",
+          "source": "General Conference, April 2025 (Fictional)",
+          "link": null
+        }
+      ],
+      "artworkURL": "https://media.churchofjesuschrist.org/media/images/parable-of-the-talents-1111622-wallpaper.jpg",
       "subpoints": [
         {
           "text": "Magnify Your God-Given Abilities",
-          "explanation": "God expects personal growth through our unique talents.",
+          "explanation": "God expects personal growth through our unique talents, whether they be spiritual gifts, leadership skills, or compassion.",
           "scriptures": [
             {
-              "verse": "Matthew 25:21",
-              "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/25.21"
+              "verse": "For unto every one that hath shall be given, and he shall have abundance: but from him that hath not shall be taken away even that which he hath.",
+              "reference": "Matthew 25:29",
+              "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/25.29?lang=eng#p29"
             }
           ],
-          "quotes": ["Elder Renlund: 'Magnify the abilities God has given you.'"]
+          "quotes": [],
+          "links": []
         },
         {
           "text": "Avoid Comparison",
-          "explanation": "Our worth is not measured against others but in our effort to grow and serve.",
+          "explanation": "Our worth is not measured against others, but in our diligent effort to grow and serve with what we have been given, relying on Christ’s enabling grace.",
           "scriptures": [
             {
-              "verse": "Galatians 6:4",
-              "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/gal/6.4"
+              "verse": "For if a man think himself to be something, when he is nothing, he deceiveth himself. But let every man prove his own work, and then shall he have rejoicing in himself alone, and not in another.",
+              "reference": "Galatians 6:4",
+              "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/gal/6.4?lang=eng#p4"
             }
           ],
-          "quotes": ["Elder Renlund: 'The Savior helps us become our best selves.'"]
+          "quotes": [
+            {
+              "text": "The Savior helps us become our best selves.",
+              "author": "Elder Dale G. Renlund",
+              "source": "General Conference, April 2025 (Fictional)",
+              "link": null
+            }
+          ],
+          "links": []
         }
       ],
-      "summary": "Use our abilities without comparison, relying on Christ’s grace.",
-      "questions": ["What talents do you feel inspired to magnify?"]
+      "questions": ["What talents do you feel inspired to magnify, and how can you do so without comparing yourself to others?"],
+      "layoutSettings": {}
     },
     {
       "title": "Parable of the Sheep and Goats",
-      "story": "The Savior taught that our treatment of others reflects our service to Him, emphasizing compassion and kindness.",
-      "historicalContext": "Jesus taught this parable emphasizing practical service and compassion as key criteria for judgment.",
+      "summary": "The Savior taught that our treatment of others reflects our service to Him, emphasizing compassion and kindness, especially to those in need.",
+      "story": "The Savior taught that our treatment of others reflects our service to Him, emphasizing compassion and kindness, especially to those in need.",
+      "historicalContext": "Jesus taught this parable in the context of His Second Coming, highlighting practical service and love for others as key criteria for eternal judgment.",
       "relatableHymns": [
         {
           "title": "Because I Have Been Given Much",
@@ -131,32 +223,59 @@
           "link": "https://www.churchofjesuschrist.org/music/library/hymns/because-i-have-been-given-much?lang=eng"
         }
       ],
+      "scriptures": [
+        {
+          "verse": "Verily I say unto you, Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me.",
+          "reference": "Matthew 25:40",
+          "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/25.40?lang=eng#p40"
+        }
+      ],
+      "quotes": [
+        {
+          "text": "Every act of service is an act of worship.",
+          "author": "Elder Dale G. Renlund",
+          "source": "General Conference, April 2025 (Fictional)",
+          "link": null
+        }
+      ],
+      "artworkURL": "https://media.churchofjesuschrist.org/media/images/the-last-judgment-1111622-wallpaper.jpg",
       "subpoints": [
         {
           "text": "Serve Others as Serving the Savior",
-          "explanation": "Acts of kindness towards others are directly tied to our devotion to Christ.",
+          "explanation": "Acts of kindness, compassion, and ministering towards others are directly tied to our devotion to Christ, making us more like Him.",
           "scriptures": [
             {
-              "verse": "Matthew 25:40",
-              "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/25.40"
+              "verse": "And the King shall answer and say unto them, Verily I say unto you, Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me.",
+              "reference": "Matthew 25:40",
+              "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/25.40?lang=eng#p40"
             }
           ],
-          "quotes": ["Elder Renlund: 'Every act of service is an act of worship.'"]
+          "quotes": [],
+          "links": []
         },
         {
           "text": "Blessing the Vulnerable",
-          "explanation": "Using our gifts to support vulnerable individuals reflects Christ-like love.",
+          "explanation": "Using our gifts and resources to support vulnerable individuals, including the hungry, sick, or imprisoned, reflects Christ-like love and prepares us for His return.",
           "scriptures": [
             {
-              "verse": "James 1:27",
-              "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/james/1.27"
+              "verse": "Pure religion and undefiled before God and the Father is this, To visit the fatherless and widows in their affliction, and to keep himself unspotted from the world.",
+              "reference": "James 1:27",
+              "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/james/1.27?lang=eng#p27"
             }
           ],
-          "quotes": ["Elder Renlund: 'Service is the essence of discipleship.'"]
+          "quotes": [
+            {
+              "text": "Service is the essence of discipleship.",
+              "author": "Elder Dale G. Renlund",
+              "source": "General Conference, April 2025 (Fictional)",
+              "link": null
+            }
+          ],
+          "links": []
         }
       ],
-      "summary": "Serving others, especially the vulnerable, is serving Christ Himself.",
-      "questions": ["Who can you serve this week?"]
+      "questions": ["Who can you serve this week, and how does that service help you prepare to meet the Savior?"],
+      "layoutSettings": {}
     }
   ]
 }
