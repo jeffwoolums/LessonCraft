@@ -1,0 +1,48 @@
+{
+  "instruction": "Generate a detailed LDS personal or group study session on the provided topic, question, or scripture block. (1) Start with a brief summary of the topic and why it matters. (2) Break down the content into 2-4 discussion sections, each with at least 3-5 thought-provoking questions. (3) Each section should have references to scriptures, quotes from General Authorities, and relevant historical/contextual background. (4) Include suggested hymns and links to related Church media (videos, artwork, audio) where appropriate. (5) Provide a closing summary and a prompt for personal reflection or journaling.",
+  "json_structure": {
+    "topic": "",
+    "summary": "",
+    "sections": [
+      {
+        "title": "",
+        "overview": "",
+        "scriptures": [
+          {
+            "verse": "",
+            "reference": "",
+            "link": ""
+          }
+        ],
+        "quotes": [
+          {
+            "text": "",
+            "author": "",
+            "source": "",
+            "link": ""
+          }
+        ],
+        "historicalContext": "",
+        "questions": [
+          ""
+        ],
+        "media": [
+          {
+            "type": "",
+            "title": "",
+            "url": ""
+          }
+        ],
+        "hymns": [
+          {
+            "title": "",
+            "number": "",
+            "link": ""
+          }
+        ]
+      }
+    ],
+    "closingSummary": "",
+    "reflectionPrompt": ""
+  }
+}
