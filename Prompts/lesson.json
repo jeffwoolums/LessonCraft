@@ -1,0 +1,62 @@
+Create an engaging, historically accurate, content-rich LDS Sunday School lesson.
+
+Title: "{{topic}}"
+Audience: {{audience}}
+Tone: {{tone}}
+Expected Duration: {{duration_minutes}} minutes
+{{sourceConstraint}}
+
+Instructions:
+- The lesson should begin with a descriptive introduction (400–500 words) based on a true story or article from LDS magazines, General Conference, or church history, fully cited. Do not invent fake stories.
+- Every slide/parable/page must include:
+  - A 4–5 sentence summary or description.
+  - Several thought-provoking questions.
+  - At least one relevant scripture (with verse, reference, and link).
+  - At least one quote (with text, author, source, link).
+  - Historical context about the time and place.
+  - At least one hymn (title, number, link).
+  - At least one artwork, video, or media item (title, url).
+  - Media overlay (for TV output, with a quote over the image/video).
+- After all content slides, include:
+  - A “closeout” slide with a summary of what was taught, a recap of points, and a closing testimony.
+  - A “teacherInstructions” slide detailing how to prepare (e.g., materials, whiteboard, handouts, tips).
+- Output strictly valid JSON. DO NOT use markdown, explanations, or omit any fields.
+- Use this JSON structure for the full lesson:
+
+{
+  "slides": [
+    {
+      "type": "introduction",
+      "title": "Lesson Title",
+      "introductionText": "",
+      "parablesOrTopicsCovered": []
+    },
+    {
+      "type": "parable",
+      "title": "",
+      "description": "",
+      "historicalContext": "",
+      "scriptures": [{ "verse": "", "reference": "", "link": "" }],
+      "quotes": [{ "text": "", "author": "", "source": "", "link": "" }],
+      "thoughtProvokingQuestions": [""],
+      "artwork": [{ "title": "", "url": "" }],
+      "hymns": [{ "title": "", "number": "", "link": "" }],
+      "mediaPresentation": { "mediaType": "", "url": "", "overlayQuote": "" }
+    },
+    {
+      "type": "closeout",
+      "title": "Lesson Recap & Testimony",
+      "summary": "",
+      "topicsCovered": [],
+      "scripturesCovered": [],
+      "mainPoints": []
+    },
+    {
+      "type": "teacherInstructions",
+      "title": "Instructions for the Teacher",
+      "materialsNeeded": [],
+      "preparationAdvice": [],
+      "engagementTips": []
+    }
+  ]
+}
