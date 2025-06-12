@@ -1,24 +1,19 @@
-const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
-const buildPrompt = require("./prompts/PromptBuilder");
-const callOpenAI = require("./services/OpenAIService");
+const { OpenAI } = require("openai");
+require('dotenv').config();
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-const app = express();
-app.use(cors());
-app.use(bodyParser.json());
+module.exports = async function callOpenAI(prompt) {
+  const completion = await openai.chat.completions.create({
+    model: "gpt-4o",
+    messages: [
+      { role: "system", content: "Respond ONLY with valid JSON." },
+      { role: "user", content: prompt }
+    ],
+    temperature: 0.7
+  });
 
-app.post("/generate", async (req, res) => {
-  try {
-    const request = req.body;
-    const prompt = buildPrompt(request);
-    const lesson = await callOpenAI(prompt);
-    res.status(200).json(lesson);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: err.message });
-  }
-});
+  let response = completion.choices[0].message.content.trim();
+  response = response.replace(/^```json|^```|```$/g, '').trim();
 
-const PORT = process.env.PORT || 10000;
-app.listen(PORT, () => console.log(`✅ Server running on http://localhost:${PORT}`));
+  return JSON.parse(response);
+}
