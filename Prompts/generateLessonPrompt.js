@@ -6,9 +6,17 @@ function buildLessonPrompt({
   lessonSource = "FreeTopic",
   comeFollowMeURL = null,
   conferenceTalkURL = null,
-  content_sources = []
+  content_sources = [],
+  settings = {
+    maxParableSlides: 3,
+    maxPointsPerSlide: 5,
+    maxScripturesPerSlide: 2,
+    maxQuotesPerSlide: 2,
+    maxArtworksPerSlide: 1,
+    maxHymnsPerSlide: 1,
+    maxQuestionsPerSlide: 5
+  }
 }) {
-
   const specificSources = content_sources.map(source => {
     switch (source) {
       case "ComeFollowMe": return "Come Follow Me manuals";
@@ -35,30 +43,69 @@ function buildLessonPrompt({
     sourceConstraint += ` Align directly with content from ${conferenceTalkURL}`;
   }
 
+  // v4.0 Prompt
   return `
-You are generating a FULL LDS lesson JSON.
+Create an engaging, historically accurate, content-rich LDS Sunday School lesson.
 
-- Write an INTRODUCTION of 400-500 words with story, context, and purpose.
-- Then create multiple PARABLE SLIDES. Each slide includes:
-    - title, description (4-5 sentences), historicalContext
-    - 2+ scriptures (verse, reference, link)
-    - 2+ quotes (text, author, source, link)
-    - 3-5 thoughtProvokingQuestions
-    - 1 hymn (title, number, link)
-    - 1 artwork (title, url)
-    - mediaPresentation (mediaType, url, overlayQuote)
-- After parables: add CLOSEOUT slide (summary + recap points).
-- After closeout: add TEACHERINSTRUCTIONS slide (materials, preparation, engagement tips).
+Title: "${topic}"
+Audience: ${audience}
+Tone: ${tone}
+Expected Duration: ${duration_minutes} minutes
+${sourceConstraint}
 
-Output strict JSON only. No markdown, no explanations.
+Instructions:
+- The lesson must begin with a descriptive introduction (400–500 words), based on a true story or article from LDS magazines, General Conference, or church history, fully cited. Do not invent fake stories.
+- Every parable slide must include:
+  - A 4–5 sentence summary or description.
+  - Several thought-provoking questions (at least ${settings.maxQuestionsPerSlide}).
+  - At least ${settings.maxScripturesPerSlide} relevant scriptures (verse, reference, link).
+  - At least ${settings.maxQuotesPerSlide} quotes (text, author, source, link).
+  - Historical context about the time and place.
+  - At least ${settings.maxHymnsPerSlide} hymn(s) (title, number, link).
+  - At least ${settings.maxArtworksPerSlide} artwork(s), video(s), or media item(s) (title, url).
+  - Media overlay (for TV output, with a quote over the image/video).
+- After all parable slides, include:
+  - A “closeout” slide with a summary of what was taught, a recap of points, and a closing testimony.
+  - A “teacherInstructions” slide detailing how to prepare (e.g., materials, whiteboard, handouts, tips).
+- Output strictly valid JSON. DO NOT use markdown, explanations, or omit any fields.
+- Use this JSON structure for the full lesson:
 
-JSON FORMAT:
 {
+  "settings": ${JSON.stringify(settings)},
   "slides": [
-    { "type": "introduction", ... },
-    { "type": "parable", ... },
-    { "type": "closeout", ... },
-    { "type": "teacherInstructions", ... }
+    {
+      "type": "introduction",
+      "title": "Lesson Title",
+      "introductionText": "",
+      "parablesOrTopicsCovered": []
+    },
+    {
+      "type": "parable",
+      "title": "",
+      "description": "",
+      "historicalContext": "",
+      "scriptures": [{ "verse": "", "reference": "", "link": "" }],
+      "quotes": [{ "text": "", "author": "", "source": "", "link": "" }],
+      "thoughtProvokingQuestions": [""],
+      "artwork": [{ "title": "", "url": "" }],
+      "hymns": [{ "title": "", "number": "", "link": "" }],
+      "mediaPresentation": { "mediaType": "", "url": "", "overlayQuote": "" }
+    },
+    {
+      "type": "closeout",
+      "title": "Lesson Recap & Testimony",
+      "summary": "",
+      "topicsCovered": [],
+      "scripturesCovered": [],
+      "mainPoints": []
+    },
+    {
+      "type": "teacherInstructions",
+      "title": "Instructions for the Teacher",
+      "materialsNeeded": [],
+      "preparationAdvice": [],
+      "engagementTips": []
+    }
   ]
 }
 `;
