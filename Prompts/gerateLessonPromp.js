@@ -1,5 +1,3 @@
-// /prompts/generateLessonPrompt.js
-
 function buildLessonPrompt({
   topic,
   audience = "Adult Sunday School",
@@ -8,82 +6,62 @@ function buildLessonPrompt({
   lessonSource = "FreeTopic",
   comeFollowMeURL = null,
   conferenceTalkURL = null,
-  content_sources = [],
+  content_sources = []
 }) {
 
-  const specificSources = content_sources.map((source) => {
+  const specificSources = content_sources.map(source => {
     switch (source) {
-      case "ComeFollowMe": return "Come Follow Me study materials";
-      case "ConferenceTalks": return "General Conference Talks";
-      case "Liahona": return "Liahona Magazine";
-      case "Friend": return "Friend Magazine";
-      case "ForStrengthOfYouth": return "For the Strength of Youth Magazine";
-      case "PreachMyGospel": return "Preach My Gospel Manual";
-      case "ChurchHistory": return "Church History topics and Saints volumes";
+      case "ComeFollowMe": return "Come Follow Me manuals";
+      case "ConferenceTalks": return "General Conference talks";
+      case "Liahona": return "Liahona magazine";
+      case "Friend": return "Friend magazine";
+      case "ForStrengthOfYouth": return "For the Strength of Youth";
+      case "PreachMyGospel": return "Preach My Gospel manual";
+      case "ChurchHistory": return "Church History and Saints volumes";
       case "JesusTheChrist": return "Jesus the Christ by James E. Talmage";
       case "GospelTopics": return "Gospel Topics Essays";
-      case "Hymns": return "The official Hymns of the Church (1985 edition)";
-      case "Scriptures": return "The Standard Works (Bible, Book of Mormon, Doctrine and Covenants, Pearl of Great Price)";
+      case "Hymns": return "The 1985 Hymns";
+      case "Scriptures": return "Standard Works (Bible, Book of Mormon, Doctrine & Covenants, Pearl of Great Price)";
       default: return source;
     }
   });
 
-  let sourceConstraint = `Use official LDS sources available at ChurchofJesusChrist.org, including ${specificSources.join(", ")}.`;
+  let sourceConstraint = `Use ONLY LDS sources: ${specificSources.join(", ")} from ChurchofJesusChrist.org.`;
 
   if (lessonSource === "ComeFollowMe" && comeFollowMeURL) {
-    sourceConstraint += ` This lesson should follow the content at: ${comeFollowMeURL}`;
+    sourceConstraint += ` Align directly with content from ${comeFollowMeURL}`;
   }
   if (lessonSource === "ConferenceTalk" && conferenceTalkURL) {
-    sourceConstraint += ` This lesson should follow the content at: ${conferenceTalkURL}`;
+    sourceConstraint += ` Align directly with content from ${conferenceTalkURL}`;
   }
 
   return `
-You are building a highly detailed, structured LDS teaching lesson.
+You are generating a FULL LDS lesson JSON.
 
-TOPIC: ${topic}
-AUDIENCE: ${audience}
-TONE: ${tone}
-DURATION: ${duration_minutes} minutes
+- Write an INTRODUCTION of 400-500 words with story, context, and purpose.
+- Then create multiple PARABLE SLIDES. Each slide includes:
+    - title, description (4-5 sentences), historicalContext
+    - 2+ scriptures (verse, reference, link)
+    - 2+ quotes (text, author, source, link)
+    - 3-5 thoughtProvokingQuestions
+    - 1 hymn (title, number, link)
+    - 1 artwork (title, url)
+    - mediaPresentation (mediaType, url, overlayQuote)
+- After parables: add CLOSEOUT slide (summary + recap points).
+- After closeout: add TEACHERINSTRUCTIONS slide (materials, preparation, engagement tips).
 
-${sourceConstraint}
+Output strict JSON only. No markdown, no explanations.
 
-STRUCTURE INSTRUCTIONS:
-
-- Build the lesson as JSON with a "slides" array.
-- The first slide is always INTRODUCTION (400-500 word introduction story).
-- Then multiple PARABLE slides, each with:
-  - Title
-  - Description (4-5 sentences)
-  - HistoricalContext
-  - Scriptures (verse, reference, link)
-  - Quotes (text, author, source, link)
-  - ThoughtProvokingQuestions (3-5)
-  - Hymns (title, number, link)
-  - Artwork (title, url)
-  - MediaPresentation (mediaType, url, overlayQuote)
-- Then CLOSEOUT slide summarizing full lesson.
-- Then TEACHERINSTRUCTIONS slide with:
-  - MaterialsNeeded
-  - PreparationAdvice
-  - EngagementTips
-
-- All data must come from ChurchofJesusChrist.org or its official publications.
-- Scripture links MUST point to ChurchofJesusChrist.org.
-- Hymn links MUST point to ChurchofJesusChrist.org/music.
-- Quotes MUST have author, source, and link.
-
-Respond ONLY with valid JSON. DO NOT include markdown or explanations.
-
-JSON STRUCTURE:
+JSON FORMAT:
 {
   "slides": [
-    { type: "introduction", ... },
-    { type: "parable", ... },
-    { type: "closeout", ... },
-    { type: "teacherInstructions", ... }
+    { "type": "introduction", ... },
+    { "type": "parable", ... },
+    { "type": "closeout", ... },
+    { "type": "teacherInstructions", ... }
   ]
 }
-  `;
+`;
 }
 
 module.exports = { buildLessonPrompt };
