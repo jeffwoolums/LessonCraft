@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
-const buildPrompt = require('./PromptBuilder');
+const buildPrompt = require('./Prompts/PromptBuilder');
 require('dotenv').config();
 
 const app = express();
