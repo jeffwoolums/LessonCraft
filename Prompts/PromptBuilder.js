@@ -12,6 +12,7 @@ Source Details: ${JSON.stringify(sourceDetails)}
 You must output valid JSON matching this exact format:
 
 {
+  "title": "string",
   "settings": {
     "maxParableSlides": ${settings.maxParableSlides},
     "maxPointsPerSlide": ${settings.maxPointsPerSlide},
@@ -45,7 +46,7 @@ You must output valid JSON matching this exact format:
           "text": "Quote text...",
           "author": "Author Name",
           "source": "Talk or Source Title",
-          "link": "https://..."
+          "link": "https://..." // can be null if not present
         }
       ],
       "thoughtProvokingQuestions": ["Question 1", "Question 2"],
@@ -95,10 +96,11 @@ You must output valid JSON matching this exact format:
 STRICT RULES:
 - Output only valid JSON. Do not output anything else.
 - The response must start with '{' and end with '}'.
-- No additional commentary, no explanations, no markdown formatting.
-- Always include all fields, even if they are empty arrays or strings.
+- No commentary, no explanations, no markdown formatting.
+- Always include **all fields**, even if they are empty arrays, empty strings, or null.
+- Always include the "settings" block.
 - Escape special characters properly.
-- If you generate invalid JSON, you will break the LessonCraft app. Do not break the app.
-- This output will be parsed directly into strongly typed Swift structs. Precision is mandatory.
+- This output will be parsed directly into strongly typed Swift Codable models.
+- Precision is mandatory. Invalid JSON will break the LessonCraft app.
 `;
 }
