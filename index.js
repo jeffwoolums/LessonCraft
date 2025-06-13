@@ -15,6 +15,7 @@ const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 const MAX_ATTEMPTS = 1;
 
+
 app.post('/generateLesson', async (req, res) => {
     try {
         const userRequest = req.body;
