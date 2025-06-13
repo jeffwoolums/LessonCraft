@@ -1,146 +1,98 @@
-const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
-const fs = require("fs");
-const { OpenAI } = require("openai");
+const express = require('express');
+const bodyParser = require('body-parser');
+const axios = require('axios');
+const buildPrompt = require('./PromptBuilder');
+require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 10000;
+const port = process.env.PORT || 10000;
 
-app.use(cors());
 app.use(bodyParser.json());
 
-// Health endpoint
-app.get("/health", (req, res) => {
-  res.send("🩺 Server is alive.");
+// OpenAI API setup
+const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+
+const MAX_ATTEMPTS = 1;
+
+app.post('/generateLesson', async (req, res) => {
+    try {
+        const userRequest = req.body;
+
+        let attempt = 0;
+        let validJSON = null;
+
+        while (attempt < MAX_ATTEMPTS) {
+            attempt++;
+            console.log(`Generating lesson (attempt ${attempt})...`);
+
+            const systemPrompt = buildPrompt(userRequest);
+
+            const aiResponse = await axios.post(
+                OPENAI_API_URL,
+                {
+                    model: 'gpt-4o',  // <-- adjust model as needed
+                    messages: [
+                        { role: 'system', content: systemPrompt },
+                        { role: 'user', content: 'Generate the lesson JSON.' }
+                    ],
+                    temperature: 0.0,
+                    top_p: 1.0,
+                    presence_penalty: 0.0,
+                    frequency_penalty: 0.0
+                },
+                {
+                    headers: {
+                        'Authorization': `Bearer ${OPENAI_API_KEY}`,
+                        'Content-Type': 'application/json'
+                    }
+                }
+            );
+
+            const rawAIText = aiResponse.data.choices[0].message.content.trim();
+
+            console.log("Raw AI response received.");
+
+            // Attempt to parse JSON safely
+            try {
+                // Remove any markdown or non-JSON wrapping
+                const cleanedJSON = extractJSON(rawAIText);
+                const parsed = JSON.parse(cleanedJSON);
+
+                // Quick top-level schema check (title + slides presence)
+                if (parsed.title && parsed.slides) {
+                    validJSON = parsed;
+                    console.log("Valid JSON decoded.");
+                    break;
+                } else {
+                    console.log("JSON missing required fields: title or slides");
+                }
+            } catch (err) {
+                console.log("JSON parse failed:", err.message);
+            }
+        }
+
+        if (validJSON) {
+            res.json(validJSON);
+        } else {
+            res.status(500).json({ error: 'Failed to generate valid lesson after multiple attempts.' });
+        }
+    } catch (err) {
+        console.error('Unexpected error:', err);
+        res.status(500).json({ error: 'Internal server error' });
+    }
 });
 
-// Load prompts from /prompts folder
-function loadPrompt(name) {
-  return fs.readFileSync(`./prompts/${name}.json`, "utf-8");
+// JSON extraction helper — removes non-JSON garbage from response
+function extractJSON(rawText) {
+    const firstBrace = rawText.indexOf('{');
+    const lastBrace = rawText.lastIndexOf('}');
+    if (firstBrace === -1 || lastBrace === -1) {
+        throw new Error("No JSON boundaries found.");
+    }
+    return rawText.substring(firstBrace, lastBrace + 1);
 }
 
-// Main lesson generator
-app.post("/generate", async (req, res) => {
-  const {
-    apiKey,
-    topic,
-    audience = "Adult Sunday School Class",
-    tone = "Inspirational",
-    duration_minutes = 45,
-    content_sources = []
-  } = req.body;
-
-  if (!apiKey) {
-    return res.status(400).json({ error: "Missing API Key." });
-  }
-
-  const openai = new OpenAI({ apiKey });
-
-  // Custom sources string
-  let sourceConstraint = "";
-  if (content_sources.length > 0) {
-    const specificSources = content_sources.map(source => {
-      switch (source) {
-        case "Ensign/Liahona (Church Magazines)": return "articles from the Ensign and Liahona magazines";
-        case "Friend Magazine (Children)": return "articles from the Friend magazine";
-        case "For the Strength of Youth Magazine": return "content from the For The Strength of Youth magazine";
-        case "Hymns (1985 Hymnbook)": return "the 1985 Hymnbook";
-        case "Children's Songbook": return "the Children's Songbook";
-        case "General Sacred Music (Other LDS.org Music)": return "other official sacred music on ChurchofJesusChrist.org/music";
-        case "Church History (Saints, Gospel Topics Essays)": return "Church History (Saints series, Gospel Topics Essays, Church History topics)";
-        case "Gospel Library (Manuals, Study Guides)": return "Gospel Library manuals and study guides";
-        case "Jesus the Christ by James Talmage": return "the book 'Jesus the Christ' by James Talmage";
-        case "Articles of Faith by James Talmage": return "the book 'Articles of Faith' by James Talmage";
-        case "Youth Come, Follow Me": return "Come, Follow Me manuals for Youth";
-        case "Adult Come, Follow Me": return "Come, Follow Me manuals for Adults";
-        default: return source;
-      }
-    });
-    sourceConstraint = `Strictly draw content from: ${specificSources.join(", ")}.`;
-  } else {
-    sourceConstraint = `Draw content from authoritative LDS sources available on ChurchofJesusChrist.org.`;
-  }
-
-  // Load the lesson prompt template and fill placeholders
-  let lessonPrompt = loadPrompt("lesson");
-  lessonPrompt = lessonPrompt
-    .replace(/{{topic}}/g, topic)
-    .replace(/{{audience}}/g, audience)
-    .replace(/{{tone}}/g, tone)
-    .replace(/{{duration_minutes}}/g, duration_minutes)
-    .replace(/{{sourceConstraint}}/g, sourceConstraint);
-
-  try {
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o",
-      messages: [
-        { role: "system", content: "Respond ONLY with valid JSON." },
-        { role: "user", content: lessonPrompt }
-      ],
-      temperature: 0.7
-    });
-
-    let responseText = completion.choices[0].message.content.trim();
-    responseText = responseText.replace(/^```json|^```|```$/g, '').trim();
-
-    const lesson = JSON.parse(responseText);
-    res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    res.status(200).send(JSON.stringify(lesson));
-  } catch (err) {
-    console.error("❌ OpenAI Error:", err.message);
-    res.status(500).json({ error: `AI Generation Failed: ${err.message}` });
-  }
-});
-
-// Enrichment endpoint
-app.post("/enrich", async (req, res) => {
-  const { apiKey, text, topic, action } = req.body;
-  if (!apiKey) return res.status(400).json({ error: "Missing API Key." });
-
-  let promptName;
-  switch (action) {
-    case "expand_summary":
-      promptName = "enrich_expand";
-      break;
-    case "add_scripture":
-      promptName = "enrich_scripture";
-      break;
-    case "add_historical_context":
-      promptName = "enrich_context";
-      break;
-    case "add_quote":
-      promptName = "enrich_quote";
-      break;
-    default:
-      return res.status(400).json({ error: "Invalid enrichment action." });
-  }
-
-  let prompt = loadPrompt(promptName);
-  prompt = prompt
-    .replace(/{{text}}/g, text)
-    .replace(/{{topic}}/g, topic || "");
-
-  try {
-    const openai = new OpenAI({ apiKey });
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o",
-      messages: [
-        { role: "system", content: "You are an assistant that provides focused, concise, LDS-centric content enrichment. Your response should be direct text for the requested action, without conversational filler." },
-        { role: "user", content: prompt }
-      ],
-      temperature: 0.7,
-      max_tokens: 500
-    });
-
-    let enrichedContent = completion.choices[0].message.content.trim();
-    res.status(200).json({ enrichedText: enrichedContent });
-  } catch (err) {
-    console.error("❌ OpenAI/Enrichment Error:", err.message);
-    res.status(500).json({ error: err.message });
-  }
-});
-
-app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+app.listen(port, () => {
+    console.log(`LessonCraft AI Proxy running on port ${port}`);
 });
