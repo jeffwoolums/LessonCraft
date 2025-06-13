@@ -1,78 +1,101 @@
 {
+  "title": "The Power of Prayer",
+  "settings": {
+    "maxParableSlides": 3,
+    "maxPointsPerSlide": 5,
+    "maxScripturesPerSlide": 4,
+    "maxQuotesPerSlide": 3,
+    "maxArtworksPerSlide": 2,
+    "maxHymnsPerSlide": 2,
+    "maxQuestionsPerSlide": 3
+  },
   "slides": [
     {
       "type": "introduction",
-      "title": "The Power of Charity",
-      "introductionText": "In this lesson, we will explore the deep meaning of charity, the pure love of Christ, and how it transforms our lives.",
-      "parablesOrTopicsCovered": ["The Good Samaritan", "The Widow's Mite", "The Lost Sheep"]
+      "title": "Introduction to Prayer",
+      "introductionText": "Prayer is the way we communicate with Heavenly Father and receive guidance.",
+      "parablesOrTopicsCovered": [
+        "The Persistent Widow",
+        "The Lord's Prayer"
+      ]
     },
     {
       "type": "parable",
-      "title": "The Good Samaritan",
-      "description": "A man was traveling and was attacked by robbers. Religious leaders passed him by, but a Samaritan showed compassion and cared for him.",
-      "historicalContext": "Jews and Samaritans traditionally had great enmity; this story taught Christlike compassion that transcends social barriers.",
+      "title": "The Persistent Widow",
+      "description": "A parable about persistence in prayer from Luke 18.",
+      "historicalContext": "Jesus taught this parable to encourage His disciples to pray and not give up.",
       "scriptures": [
         {
-          "verse": "But a certain Samaritan, as he journeyed, came where he was: and when he saw him, he had compassion on him.",
-          "reference": "Luke 10:33",
-          "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/luke/10.33"
+          "verse": "And shall not God avenge his own elect, which cry day and night unto him?",
+          "reference": "Luke 18:7",
+          "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/luke/18.7"
         }
       ],
       "quotes": [
         {
-          "text": "True charity is love in action.",
-          "author": "President Thomas S. Monson",
-          "source": "General Conference October 2010",
-          "link": "https://www.churchofjesuschrist.org/study/general-conference/2010/10/charity-never-faileth"
+          "text": "Prayers are always answered in the way and time God knows is best.",
+          "author": "Thomas S. Monson",
+          "source": "Conference Address, 2008",
+          "link": "https://www.churchofjesuschrist.org/study/general-conference/2008/04"
         }
       ],
       "thoughtProvokingQuestions": [
-        "When have you been the recipient of unexpected compassion?",
-        "How can we overcome biases that prevent us from showing love to others?"
+        "Why do you think persistence matters in prayer?",
+        "Have you ever felt an answer came after patience?"
       ],
       "artwork": [
         {
-          "title": "The Good Samaritan by Walter Rane",
-          "url": "https://media.ldscdn.org/images/media-library/gospel-art/new-testament/the-good-samaritan-39686-240x240.jpg"
+          "title": "Widow Praying",
+          "url": "https://example.com/artwork/widow.jpg"
         }
       ],
       "hymns": [
         {
-          "title": "Love One Another",
-          "number": "308",
-          "link": "https://www.churchofjesuschrist.org/music/library/hymns/love-one-another"
+          "title": "Sweet Hour of Prayer",
+          "number": "142",
+          "link": "https://www.churchofjesuschrist.org/music/library/hymns/sweet-hour-of-prayer"
         }
       ],
       "mediaPresentation": {
         "mediaType": "video",
-        "url": "https://media.churchofjesuschrist.org/video/charity-example.mp4",
-        "overlayQuote": "By this shall all men know that ye are my disciples, if ye have love one to another."
+        "url": "https://example.com/media/persistent-widow.mp4",
+        "overlayQuote": "Pray always, and do not lose heart."
       }
     },
     {
       "type": "closeout",
-      "title": "Summary",
-      "summary": "Charity is the essence of discipleship. As we serve others, we draw closer to Christ.",
-      "topicsCovered": ["Charity", "Service", "Christlike Love"],
+      "title": "Applying Prayer in Our Lives",
+      "summary": "Prayer strengthens our relationship with God and gives us guidance.",
+      "topicsCovered": [
+        "Consistency in prayer",
+        "Faith in God's timing"
+      ],
       "scripturesCovered": [
         {
-          "verse": "Charity never faileth.",
-          "reference": "1 Corinthians 13:8",
-          "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/1-cor/13.8"
+          "verse": "Pray without ceasing.",
+          "reference": "1 Thessalonians 5:17",
+          "link": "https://www.churchofjesuschrist.org/study/scriptures/nt/1-thes/5.17"
         }
       ],
       "mainPoints": [
-        "Charity transforms lives",
-        "We are commanded to love one another",
-        "Service draws us to Christ"
+        "Prayer is essential for spiritual growth.",
+        "Answers may come in ways we do not expect."
       ]
     },
     {
       "type": "teacherInstructions",
-      "title": "Preparation Notes",
-      "materialsNeeded": ["Whiteboard", "Markers", "Scriptures"],
-      "preparationAdvice": ["Study Luke 10 and related conference talks.", "Pray for inspiration for class discussions."],
-      "engagementTips": ["Invite members to share personal experiences of charity.", "Use role-play to discuss modern-day Good Samaritan examples."]
+      "title": "Teacher Prep Guide",
+      "materialsNeeded": [
+        "Scriptures",
+        "Whiteboard"
+      ],
+      "preparationAdvice": [
+        "Read Luke 18:1-8 beforehand",
+        "Prepare a personal experience about prayer to share"
+      ],
+      "engagementTips": [
+        "Invite class members to share times they've seen prayer answered."
+      ]
     }
   ]
 }
