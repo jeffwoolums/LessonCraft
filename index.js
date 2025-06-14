@@ -16,10 +16,10 @@ const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 app.post('/generate', async (req, res) => {
     try {
         const userRequest = req.body;
-
         console.log("Received lesson generation request");
-
+        
         const systemPrompt = buildPrompt(userRequest);
+        console.log("Generated system prompt:", systemPrompt); // <-- LOGGING
 
         const aiResponse = await axios.post(
             OPENAI_API_URL,
@@ -42,6 +42,13 @@ app.post('/generate', async (req, res) => {
                 }
             }
         );
+
+        console.log("AI Raw Response:", aiResponse.data); // <-- LOGGING
+
+        if (!aiResponse.data.choices || !aiResponse.data.choices[0].message.content) {
+            console.error("AI response missing content:", aiResponse.data);
+            return res.status(500).json({ error: "AI response missing content" });
+        }
 
         const rawJSON = aiResponse.data.choices[0].message.content;
         const lessonObject = JSON.parse(rawJSON);
