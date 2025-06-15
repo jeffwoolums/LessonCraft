@@ -9,4 +9,4 @@ function sanitizeSettings(settings) {
         maxQuestionsPerSlide: settings?.maxQuestionsPerSlide ?? 5,
     };
 }
-module.exports = { sanitizeSettings };
+module.exports = { sanitizeSettings }; 
