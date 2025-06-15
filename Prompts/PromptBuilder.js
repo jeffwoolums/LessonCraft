@@ -1,26 +1,34 @@
-// Builds prompt dynamically based on user input
 module.exports = function buildPrompt(request) {
-  const { sourceType, sourceDetails } = request.lessonSource;
-  const settings = request.settings;
+  const { sourceType, sourceDetails } = request.lessonSource || {};
+
+  const safeSettings = {
+    maxParableSlides: request?.settings?.maxParableSlides ?? 3,
+    maxPointsPerSlide: request?.settings?.maxPointsPerSlide ?? 5,
+    maxScripturesPerSlide: request?.settings?.maxScripturesPerSlide ?? 2,
+    maxQuotesPerSlide: request?.settings?.maxQuotesPerSlide ?? 2,
+    maxArtworksPerSlide: request?.settings?.maxArtworksPerSlide ?? 1,
+    maxHymnsPerSlide: request?.settings?.maxHymnsPerSlide ?? 1,
+    maxQuestionsPerSlide: request?.settings?.maxQuestionsPerSlide ?? 3
+  };
 
   return `
 You are generating a lesson JSON file for the LessonCraft 4.0 system.
 
-Source Type: ${sourceType}
-Source Details: ${JSON.stringify(sourceDetails)}
+Source Type: ${sourceType || "DefaultType"}
+Source Details: ${JSON.stringify(sourceDetails || {})}
 
 You must output valid JSON matching this exact format:
 
 {
   "title": "string",
   "settings": {
-    "maxParableSlides": ${settings.maxParableSlides},
-    "maxPointsPerSlide": ${settings.maxPointsPerSlide},
-    "maxScripturesPerSlide": ${settings.maxScripturesPerSlide},
-    "maxQuotesPerSlide": ${settings.maxQuotesPerSlide},
-    "maxArtworksPerSlide": ${settings.maxArtworksPerSlide},
-    "maxHymnsPerSlide": ${settings.maxHymnsPerSlide},
-    "maxQuestionsPerSlide": ${settings.maxQuestionsPerSlide}
+    "maxParableSlides": ${safeSettings.maxParableSlides},
+    "maxPointsPerSlide": ${safeSettings.maxPointsPerSlide},
+    "maxScripturesPerSlide": ${safeSettings.maxScripturesPerSlide},
+    "maxQuotesPerSlide": ${safeSettings.maxQuotesPerSlide},
+    "maxArtworksPerSlide": ${safeSettings.maxArtworksPerSlide},
+    "maxHymnsPerSlide": ${safeSettings.maxHymnsPerSlide},
+    "maxQuestionsPerSlide": ${safeSettings.maxQuestionsPerSlide}
   },
   "slides": [
     {
@@ -46,7 +54,7 @@ You must output valid JSON matching this exact format:
           "text": "Quote text...",
           "author": "Author Name",
           "source": "Talk or Source Title",
-          "link": "https://..." // can be null if not present
+          "link": "https://..."
         }
       ],
       "thoughtProvokingQuestions": ["Question 1", "Question 2"],
