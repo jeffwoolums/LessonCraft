@@ -1,6 +1,6 @@
 const axios = require('axios');
 require('dotenv').config();
-
+ 
 const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
