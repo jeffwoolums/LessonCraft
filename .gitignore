@@ -1,0 +1,56 @@
+# 📦 Node.js dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ⚙ Build artifacts
+dist/
+build/
+coverage/
+
+# 🗝 Environment secrets
+.env
+.env.*
+.env.local
+.env.production
+.env.development
+
+# 📱 Xcode / iOS files
+DerivedData/
+xcuserdata/
+*.xcworkspace
+*.xcuserstate
+Pods/
+*.xcconfig
+*.ipa
+*.dSYM
+*.app
+*.xcarchive
+
+# 🏗 Xcode temporary build files
+build/
+*.pbxuser
+project.xcworkspace/
+
+# 💾 User-specific files
+*.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+*.log
+
+# 🔐 Key files
+*.key
+*.crt
+*.pem
+
+# 🚫 Backup files
+*.bak
+*.tmp
+
+# 🔧 Optional AI / training data
+training_data/
+*.model
+*.checkpoint
