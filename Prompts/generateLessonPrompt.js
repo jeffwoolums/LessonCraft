@@ -1,22 +1,24 @@
-function buildLessonPrompt({
-  topic,
-  audience = "Adult Sunday School",
-  tone = "Inspirational",
-  duration_minutes = 45,
-  lessonSource = "FreeTopic",
-  comeFollowMeURL = null,
-  conferenceTalkURL = null,
-  content_sources = [],
-  settings = {
-    maxParableSlides: 3,
-    maxPointsPerSlide: 5,
-    maxScripturesPerSlide: 2,
-    maxQuotesPerSlide: 2,
-    maxArtworksPerSlide: 1,
-    maxHymnsPerSlide: 1,
-    maxQuestionsPerSlide: 5
-  }
-}) {
+function buildLessonPrompt(request) {
+  const {
+    topic = "Default Topic",
+    audience = "Adult Sunday School",
+    tone = "Inspirational",
+    duration_minutes = 45,
+    lessonSource = "FreeTopic",
+    comeFollowMeURL = null,
+    conferenceTalkURL = null,
+    content_sources = [],
+    settings = {
+      maxParableSlides: 3,
+      maxPointsPerSlide: 5,
+      maxScripturesPerSlide: 2,
+      maxQuotesPerSlide: 2,
+      maxArtworksPerSlide: 1,
+      maxHymnsPerSlide: 1,
+      maxQuestionsPerSlide: 5
+    }
+  } = request || {};
+
   const specificSources = content_sources.map(source => {
     switch (source) {
       case "ComeFollowMe": return "Come Follow Me manuals";
@@ -110,5 +112,4 @@ Instructions:
 }
 `;
 }
-
 module.exports = { buildLessonPrompt };
