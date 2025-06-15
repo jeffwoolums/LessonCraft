@@ -18,7 +18,7 @@ function buildLessonPrompt(request) {
       maxQuestionsPerSlide: 5
     }
   } = request || {};
-
+ 
   const specificSources = content_sources.map(source => {
     switch (source) {
       case "ComeFollowMe": return "Come Follow Me manuals";
