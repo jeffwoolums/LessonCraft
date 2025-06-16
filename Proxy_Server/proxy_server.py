@@ -8,7 +8,7 @@ import json
 # ✅ Load your OpenAI key from environment
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-app = FastAPI()
+app = FastAPI() 
 
 class PromptRequest(BaseModel):
     prompt: str
