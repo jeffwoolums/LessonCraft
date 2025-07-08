@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { callOpenAI } = require('./OpenAIServices');
+const { callOpenAI } = require('../OpenAIServices');
 require('dotenv').config();
 
 const app = express();
